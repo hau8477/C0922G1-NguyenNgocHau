@@ -1,0 +1,21 @@
+#p1 {
+    float: left;
+    color: blue;
+}
+#p2 {
+    float: right;
+    color: blue;
+}
+table {
+    width: 70%;
+}
+th, td {
+    text-align: center;
+}
+#1 {
+    background-color: blue;
+}
+h1 {
+    color: blue;
+    text-align: center;
+}

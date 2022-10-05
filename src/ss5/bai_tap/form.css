@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+    background-color: coral;
+    color: white;
+    font-family: "Arial Black" ;
+}
+#f1
+{
+    background-color: aqua;
+    width: 1025px;
+}
+#f2
+{
+    background-color: white;
+ text-align: center;
+}
+#t1 {
+
+}
+#t2 {
+    color: coral;
+    float: left;
+
+}

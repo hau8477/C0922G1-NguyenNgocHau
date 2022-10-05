@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí học viên</title>
+    <link rel="stylesheet" href="form2.css">
+</head>
+<body>
+<fieldset>
+    <form action="tao_form_don_gian_so_thich_cua_ban.html">
+        <h1>Đăng kí học viên</h1>
+        <center>
+        <table>
+            <tr>
+                <th id="th1">Họ và tên</th>
+                <th><input type="text" name="name" placeholder="Họ và tên"></th>
+            </tr>
+            <tr>
+                <th id="th2">Ngày sinh</th>
+                <th><input type="date" name="date"></th>
+            </tr>
+            <tr>
+                <th id="th3">Giới tính</th>
+                <th>
+                    <input type="radio" checked name="gender">Nam
+                    <input type="radio" name="gender">Nữ
+                </th>
+            </tr>
+            <tr>
+                <th id="th4">Địa chỉ</th>
+                <th><textarea name="address"></textarea></th>
+            </tr>
+            <tr>
+                <th id="th5">Lớp</th>
+                <th>
+                    <select>
+                        <option value="grade1">Lớp tháng 1</option>
+                        <option value="grade1">Lớp tháng 2</option>
+                        <option value="grade1">Lớp tháng 3</option>
+                        <option value="grade1">Lớp tháng 4</option>
+                        <option value="grade1">Lớp tháng 5</option>
+                        <option value="grade1">Lớp tháng 6</option>
+                        <option value="grade1">Lớp tháng 7</option>
+                        <option value="grade1">Lớp tháng 8</option>
+                        <option value="grade1">Lớp tháng 9</option>
+                        <option value="grade1">Lớp tháng 10</option>
+                        <option value="grade1">Lớp tháng 11</option>
+                        <option value="grade1">Lớp tháng 12</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th id="th6">Email</th>
+                <th><input type="email" name="email"></th>
+            </tr>
+            <tr>
+                <th id="th7">Điện thoại</th>
+                <th><input type="text" name="phonenumber"></th>
+            </tr>
+        </table><br><br>
+        </center>
+        <input type="submit" name="submit" value="Đăng kí">
+        <input type="reset" name="reset" value="Nhập lại">
+    </form>
+</fieldset>
+</body>
+</html>

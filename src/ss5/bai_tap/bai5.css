@@ -1,0 +1,25 @@
+
+.odd:nth-child(odd) {
+    background-color: white;
+}
+.even:nth-child(even) {
+    background-color: black;
+}
+.odd:nth-child(odd) {
+    background-color: black;
+}
+.even:nth-child(odd) {
+    background-color: white;
+}
+table{
+    cellpadding="200px" cellspacing="200px";
+    background-color: white;
+}
+fieldset{
+    background-color: goldenrod;
+    width: 100px;
+}
+.1 {
+ba
+}
+

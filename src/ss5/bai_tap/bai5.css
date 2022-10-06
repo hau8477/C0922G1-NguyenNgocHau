@@ -12,14 +12,20 @@
     background-color: white;
 }
 table{
-    cellpadding="200px" cellspacing="200px";
     background-color: white;
+}
+.1{
+backgorund-color: goldenrod;
+}
+#tr1 {
+    background-color: goldenrod;
+    font-size: 20px;
 }
 fieldset{
     background-color: goldenrod;
     width: 100px;
 }
-.1 {
-ba
+#A,#B,#C,#D,#E,#F,#G,#H {
+    background-color: goldenrod;
+    font-size: 20px;
 }
-

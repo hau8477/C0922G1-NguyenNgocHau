@@ -1,31 +1,18 @@
-
-.odd:nth-child(odd) {
-    background-color: white;
+#tr12{
+    background-color: goldenrod;
 }
-.even:nth-child(even) {
+.odd1 :nth-child(odd){
     background-color: black;
 }
-.odd:nth-child(odd) {
+.even2 :nth-child(even){
     background-color: black;
 }
-.even:nth-child(odd) {
-    background-color: white;
-}
-table{
-    background-color: white;
-}
-.1{
-backgorund-color: goldenrod;
-}
-#tr1 {
+.odd1 .A {
     background-color: goldenrod;
-    font-size: 20px;
 }
-fieldset{
+.even2 .A {
     background-color: goldenrod;
-    width: 100px;
 }
-#A,#B,#C,#D,#E,#F,#G,#H {
-    background-color: goldenrod;
-    font-size: 20px;
+table {
+    border: 2px solid black;
 }

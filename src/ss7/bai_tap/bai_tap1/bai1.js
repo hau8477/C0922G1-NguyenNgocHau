@@ -1,0 +1,11 @@
+inputvatly= prompt("Nhập điểm Vật Lý: ");
+inputhoahoc= prompt("Nhập điểm Học Hóa: ");
+inputsinhhoc= prompt("Nhập điểm Sinh Học");
+var vatly= parseInt(inputvatly);
+var sinhhoc= parseInt(inputsinhhoc);
+var hoahoc= parseInt(inputhoahoc);
+var tongdiem= vatly+hoahoc+sinhhoc;
+var dtb= tongdiem/3;
+document.write("Tổng điểm là : " +tongdiem);
+document.write("<br>");
+document.write("Điểm trung bình là : " +dtb);

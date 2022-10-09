@@ -1,6 +1,6 @@
 
 function changeMoney() {
-    let sotien = document.getElementById("sotien").value;
+    let sotien =document.getElementById("sotien").value;
     let fromC =document.getElementById("from").value;
     let toC = document.getElementById("to").value;
     let result
@@ -21,4 +21,3 @@ function changeMoney() {
         document.write("Relust: " +result)
     }
 }
-

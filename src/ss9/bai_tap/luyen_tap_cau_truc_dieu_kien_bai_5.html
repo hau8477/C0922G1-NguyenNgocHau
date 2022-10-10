@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5 </title>
+</head>
+<body>
+<script>
+    let baiKiemTra = parseFloat((prompt("Nhập điểm bài kiểm tra")));
+    let thiGiuaKi = parseFloat((prompt("Nhập điểm bài thi giữa kì")));
+    let thiCuoiKi =  parseFloat((prompt("Nhập điểm bài thi cuối kì")));
+    let diemTrungBinh = (baiKiemTra + thiGiuaKi*2 + thiCuoiKi*3)/6;
+    if (diemTrungBinh >= 8 ) {
+        alert("Học lực giỏi")
+    } else if (diemTrungBinh >= 6.5) {
+        alert("Học lực khá")
+    } else if (diemTrungBinh >= 5 ) {
+        alert("Học lực trung bình")
+    } else if (diemTrungBinh >= 3.5) {
+        alert("Học lực yếu")
+    } else alert("Học lực kém");
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+</head>
+<body>
+<form>
+    <input type="text" id="view" style="width: 210px"/>
+    <table border="1" cellpadding="10px" cellspacing="5px" style="background-color: aqua;color: #d61b06">
+        <tr>
+            <td><button type="button" value ="1" name="so1" onclick="layGiatri(this.value)">1</button></td>
+            <td><button type="button" value ="2" name="so2" onclick="layGiatri(this.value)">2</button></td>
+            <td><button type="button" value ="3" name="so3" onclick="layGiatri(this.value)">3</button></td>
+            <td><button type="button" value ="+" name="dauCong" onclick="layGiatri(this.value)">+</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" value ="4" name="so4" onclick="layGiatri(this.value)">4</button></td>
+            <td><button type="button" value ="5" name="so5" onclick="layGiatri(this.value)">5</button></td>
+            <td><button type="button" value ="6" name="so6" onclick="layGiatri(this.value)">6</button></td>
+            <td><button type="button" value ="-" name="dauTru" onclick="layGiatri(this.value)">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" value ="7" name="so7" onclick="layGiatri(this.value)">7</button></td>
+            <td><button type="button" value ="8" name="so8" onclick="layGiatri(this.value)">8</button></td>
+            <td><button type="button" value ="9" name="so9" onclick="layGiatri(this.value)">9</button></td>
+            <td><button type="button" value ="*" name="dauNhan" onclick="layGiatri(this.value)">*</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" name="reset" onclick="xoa()" > AC </button></td>
+            <td><button type="button" value ="0" name="so0" onclick="layGiatri(this.value)">0</button></td>
+            <td><button name= "result" onclick="result()"> = </button></td>
+            <td><button type="button" value ="/" name="dauChia" onclick="layGiatri(this.value)"> / </button></td>
+        </tr>
+    </table>
+</form>
+<script>
+    let view = document.getElementById("view");
+    // function layGiatri(value) {
+    //     view.value += value;
+    // }
+    function result() {
+        let result= eval(view.value)
+        view.value= result ;
+        console.log(result)
+    }
+
+    // function xoa() {
+    //     view.value= "";
+    // }
+</script>
+</body>
+</html>

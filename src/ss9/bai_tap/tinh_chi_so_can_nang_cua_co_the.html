@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI number only</title>
+</head>
+<body>
+<h1>BMI number only</h1>
+<form>
+    <p>Enter a weight: (kg) </p>
+    <input type="text" name="weight" id="weightW">
+    <p>Enter a hight: (m) </p>
+    <input type="text" name="hight" id="hightH">
+    <br>
+    <br>
+    <button type="button" onclick="check()" name="kiemTra" >Check</button>
+    <br>
+    <p id="result"></p>
+</form>
+<script>
+    function check() {
+        let weight = parseFloat((document.getElementById("weightW").value));
+        let hight  = parseFloat((document.getElementById("hightH").value));
+        let bmi = weight / ( hight * hight);
+        let result;
+        if (bmi < 18.5) {
+            result = "Underweight";
+        } else if (bmi < 25) {
+            result = "Normal";
+        } else if (bmi < 30) {
+            result = "Overweight";
+        } else result = "Obese"
+        document.getElementById("result").innerHTML= " You: " +  result ;
+    }
+</script>
+</body>
+</html>

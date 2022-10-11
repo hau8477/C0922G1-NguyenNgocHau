@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+<script>
+    let thuNhap = parseFloat(prompt("Thu nhập tháng này là: "));
+    if (thuNhap < 10000000) {
+        alert("Mức lương chưa cần nộp thuế thu nhập cá nhân")
+    } else if (thuNhap <= 18000000) {
+        alert("Thuế thu nhập cá nhân của bạn là 15% mức lương, tương đương: " + (thuNhap*0.15) + " Đ");
+    } else if (thuNhap <= 32000000) {
+        alert("Thuế thu nhập cá nhân của bạn là 20% mức lương, tương đương: " + (thuNhap * 0.2) + " Đ");
+    } else if (thuNhap <= 52000000) {
+        alert("Thuế thu nhập cá nhân của bạn là 25% mức lương, tương đương: " + (thuNhap * 0.25) + " Đ");
+    } else if (thuNhap <= 80000000) {
+        alert("Thuế thu nhập cá nhân của bạn là 30% mức lương, tương đương: " + (thuNhap * 0.3) + " Đ");
+    } else alert("Thuế thu nhập cá nhân của bạn là 35% mức lương, tương đương: " + (thuNhap * 0.35) + " Đ");
+</script>
+</body>
+</html>

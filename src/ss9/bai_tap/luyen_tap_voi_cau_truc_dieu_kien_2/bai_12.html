@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<script>
+    let soTien = parseFloat((prompt("Số tiền vay: ")));
+    let soThang = parseInt((prompt("Số tháng vay là: ")));
+    let laiSuat = parseFloat((prompt("Lãi suất hàng tháng là (VD: 100%=1): ")));
+    let vonValai = soTien*(Math.pow((1+laiSuat),soThang));
+    alert("Số tiền cả vốn lẫn lãi sau " + soThang + " là: " + vonValai);
+</script>
+</body>
+</html>

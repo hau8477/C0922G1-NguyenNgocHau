@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+
+    let d = new Date(prompt("Nhập ngày hôm nay (VD: (2022-11-10)): "));
+    console.log(d.toUTCString());
+
+    /*Chuyển date sang mili giây*/
+    let milis = d.getTime();
+
+    /*Trừ 172800000 mili giây (tương đương với trừ 2 ngày) từ thời gian ban đầu*/
+    let new_milis= milis - 172800000;
+
+    /*Và chuyển lại mili giây về date thông qua hàm new Date*/
+    let d2 = new Date(new_milis);
+
+    console.log(d2.toUTCString());
+</script>
+</body>
+</html>

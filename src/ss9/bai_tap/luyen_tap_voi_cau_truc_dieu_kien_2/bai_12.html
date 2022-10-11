@@ -8,7 +8,7 @@
 <script>
     let soTien = parseFloat((prompt("Số tiền vay: ")));
     let soThang = parseInt((prompt("Số tháng vay là: ")));
-    let laiSuat = parseFloat((prompt("Lãi suất hàng tháng là (VD: 10%=0.1): ")));
+    let laiSuat = parseFloat((prompt("Lãi suất hàng tháng là (VD: 1%=0.01): ")));
     let vonValai = soTien*(Math.pow((1+laiSuat),soThang));
     alert("Số tiền cả vốn lẫn lãi sau " + soThang + " là: " + vonValai);
 </script>

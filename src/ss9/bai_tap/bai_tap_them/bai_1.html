@@ -8,10 +8,14 @@
 <script>
     var d = new Date();
     milis = d.getTime();
-    dTo= Date();
+    console.log(milis)
+    dTo = new Date(2023,11,25);
     milis2 = dTo.getTime();
     console.log(milis2)
-
+    let milis3 = (milis2 - milis);
+    console.log(milis3)
+    soNgay = parseInt(milis3/(24*60*60*1000));
+    alert("Từ ngày " + d + " đến Xmas 2023-12-25 là: " + soNgay + " ngày");
 </script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let n = 0;
+    let n1=0;
+    let n2=1;
+    let dem=1;
+    let soFibonacci= parseInt(prompt("Nhập số lượng số Fibonacci cần hiển thị: "));
+    document.write("1" + "<br>")
+    for (let i = 1; i <= 1000; i++) {
+        if (dem < soFibonacci) {
+            n3 = n1 + n2;
+            document.write(n3 + "<br>")
+            n1 = n2;
+            n2 = n3;
+            dem += 1;
+        }
+    }
+</script>
+</body>
+</html>

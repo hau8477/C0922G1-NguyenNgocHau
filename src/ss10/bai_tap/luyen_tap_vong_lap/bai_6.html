@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let chiaBay = parseInt(prompt("Nhập số lượng số chia hết cho 7: "));
+    let dem = 0;
+    let tongBay = 0;
+    for (let i = 1; i <= 10000; i++) {
+        if (dem < chiaBay) {
+            if (i % 7 == 0) {
+                tongBay += i;
+                dem += 1;
+            }
+        } else break;
+    }
+    alert("Tổng " + chiaBay + " số đầu tiên chia hết cho 7 trong dãy số tự nhiên là " + tongBay)
+</script>
+</body>
+</html>

@@ -5,6 +5,31 @@
     <title>Bài 8</title>
 </head>
 <body>
-
+<button type="button" onclick="doanSo()">Bắt đầu trò chơi</button>
+<script>
+    function doanSo() {
+        let khoanDoan = parseInt(prompt("Số bạn muốn đoán trong khoản lớn nhất là "));
+        let numberDoan = parseInt(prompt("Nhập số bạn đoán"));
+        let numberRan = Math.floor(Math.random() * khoanDoan);
+        let lanDoan = 0;
+        while (numberDoan !== numberRan) {
+            lanDoan += 1;
+            if (lanDoan == 4) {
+                alert("Bạn hết số lần đoán");
+                break;
+            }
+            if (numberDoan < numberRan) {
+                alert("Kết quả lớn hơn số bạn đoán")
+            }
+            if (numberDoan > numberRan) {
+                alert("Kết quả nhỏ hơn số bạn đoán")
+            }
+            parseInt(prompt("Đoán lại số khác"))
+        }
+        if (numberDoan == numberRan) {
+            alert("Bạn đã đoán đúng số. Xin chúc mừng bạn")
+        }
+    }
+</script>
 </body>
 </html>

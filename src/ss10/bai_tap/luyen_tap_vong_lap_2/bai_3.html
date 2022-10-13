@@ -7,64 +7,56 @@
 <body>
 <script>
     // Góc vuông thứ 1
-    // let h = parseInt(prompt("Nhập chiều cao của tam giác"));
-    // for (let i = 1; i <= h; i++) {
-    //     for (let j = 1; j <= i; j++) {
-    //         document.write("*")
-    //     }
-    //     document.write("<br>")
-    // }
+    let h = parseInt(prompt("Nhập chiều cao của tam giác"));
+    for (let i = 1; i <= h; i++) {
+        for (let j = 1; j <= i; j++) {
+            document.write("*")
+        }
+        document.write("<br>")
+    } document.write("<br>")
 
 
-    // Góc vuông thứ 2:
-    // let h = parseInt(prompt("Nhập chiều cao của tam giác"));
-    // for (let i = h; i >= 1; i--) {
-    //     for (let k = h; k >= i; k--) {
-    //         document.write("&nbsp;&nbsp");
-    //     }
-    //     for (let j = 1; j <= i; j++) {
-    //         document.write("*")
-    //     }
-    //     document.write("<br>")
-    // }
+    for (let e = 1; e <= h; e++) {
+        for (let d = h; d >= e; d--) {
+            document.write("*");
+        }
+        for (let s = 1; s <= e * 2 - 1; s++) {
+            document.write("&nbsp;&nbsp");
+        }
+        document.write("<br>")
+    } document.write("<br>")
+
+    for (let x = 1; x <= h; x++) {
+        for (let v = h; v >= x; v--) {
+            document.write("&nbsp;&nbsp");
+        }
+        for (let c = 1; c <= x ; c++) {
+            document.write("*");
+        }
+        document.write("<br>")
+    }document.write("<br>")
 
 
-    // Góc vuông thứ 3:
-    // let h = parseInt(prompt("Nhập chiều cao của tam giác"));
-    // for (let i = 1; i <= h; i++) {
-    //     for (let k = h; k >= i; k--) {
-    //         document.write("*");
-    //     }
-    //     for (let j = 1; j <= i * 2 - 1; j++) {
-    //         document.write("&nbsp;&nbsp");
-    //     }
-    //     document.write("<br>")
-    // }
+    for (let t = h; t >= 1; t--) {
+        for (let k = h; k >= t; k--) {
+            document.write("&nbsp;&nbsp");
+        }
+        for (let r = 1; r <= t; r++) {
+            document.write("*")
+        }
+        document.write("<br>")
+    } document.write("<br>")
 
 
-    // Góc vuông thứ 4
-    // let h = parseInt(prompt("Nhập chiều cao của tam giác"));
-    // for (let i = 1; i <= h; i++) {
-    //     for (let k = h; k >= i; k--) {
-    //         document.write("&nbsp;&nbsp");
-    //     }
-    //     for (let j = 1; j <= i ; j++) {
-    //         document.write("*");
-    //     }
-    //     document.write("<br>")
-    // }
-
-    // Tam giác cân:
-    // let h = parseInt(prompt("Nhập chiều cao của tam giác"));
-    // for (let i = 1; i <= h; i++) {
-    //     for (let k = h; k >= i; k--) {
-    //         document.write("&nbsp;&nbsp");
-    //     }
-    //     for (let j = 1; j <= i * 2 - 1; j++) {
-    //         document.write("*");
-    //     }
-    //     document.write("<br>")
-    // }
+    for (let b = 1; b <= h; b++) {
+        for (let n = h; n >= b; n--) {
+            document.write("&nbsp;&nbsp");
+        }
+        for (let m = 1; m <= b * 2 - 1; m++) {
+            document.write("*");
+        }
+        document.write("<br>")
+    }
 
 </script>
 </body>

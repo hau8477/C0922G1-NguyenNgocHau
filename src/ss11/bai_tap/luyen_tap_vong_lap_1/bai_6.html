@@ -9,7 +9,7 @@
     let chiaBay = parseInt(prompt("Nhập số lượng số chia hết cho 7: "));
     let dem = 0;
     let tongBay = 0;
-    for (let i = 0; i <= 10000; i++) {
+    for (let i = 0; i <= 10000; i+=7) {
         if (dem < chiaBay) {
             if (i % 7 == 0) {
                 tongBay += i;

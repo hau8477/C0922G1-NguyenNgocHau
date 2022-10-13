@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tam giác rỗng</title>
+</head>
+<body>
+<script>
+    let h = parseInt(prompt("Nhập chiều cao của tam giác"));
+    for (let b = 1; b <= h; b++) {
+        for (let n = h; n >= b; n--) {
+            document.write("&nbsp;&nbsp");
+        }
+        for (let m = 1; m <= b * 2 - 1; m++) {
+            if (m == 1 || b == h || m==b*2-1 ) {
+                document.write("*");
+            } else document.write("&nbsp;&nbsp")
+        }
+        document.write("<br>")
+    }
+</script>
+</body>
+</html>

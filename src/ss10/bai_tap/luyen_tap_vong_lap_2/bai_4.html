@@ -6,12 +6,13 @@
 </head>
 <body>
 <script>
-    let h = parseInt(prompt("Nhập vào kích thước"));
-    for (let k=1; k <=h ; k++) {
-        for (let i =1; i <=k; i++) {
-            for (let j =1; j<=i; j++){
+    let r = parseInt(prompt("Nhập vào chiều rộng"));
+    let d = parseInt(prompt("Nhập vào chiều dài"));
+    for (let i = 1; i <= r; i++) {
+        for (let j = 1; j <= d; j++) {
+            if (i == 1 || i == r || j == 1 || j == d) {
                 document.write("*");
-            }
+            } else document.write("&nbsp;&nbsp")
         }
         document.write("<br>")
     }

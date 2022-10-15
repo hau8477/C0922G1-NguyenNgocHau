@@ -7,13 +7,19 @@
 <body>
 <script>
     let chuoiKiTu = prompt("Enter a string: ");
-    let chuoi = chuoiKiTu.toString();
-    let result = [chuoi[0]];
+    let arrayString = [];
+    let arrayStringm=[];
 
-    // document.write(chuoi.toUpperCase())
-    for (let i = 0; i < chuoi.length; i++){
-            if (chuoi[i]=yo)
+    for (let i = 0; i < chuoiKiTu.length; i++) {
+        arrayString.push(chuoiKiTu.charAt(i))
     }
+
+    for (let i = 0; i < arrayString.length; i++) {
+        if (arrayString[i] == arrayString[i].toLowerCase()) {
+            arrayStringm.push(arrayString[i].toUpperCase());
+        } else arrayStringm.push(arrayString[i].toLowerCase())
+    }
+    document.write(arrayStringm.join(""))
 </script>
 </body>
 </html>

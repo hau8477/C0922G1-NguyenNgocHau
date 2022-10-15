@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bàn cờ caro đơn giản</title>
+</head>
+<body>
+<h1>Caro Game Simple</h1>
+<p id="caroGame"></p>
+<script>
+    let banCo = [];
+    let dong="";
+    for (let i=0;i<5;i++) {
+        banCo[i] = new Array(0,0,0,0,0)
+        }
+    for (let i=0;i<5;i++) {
+        dong += "<br/>";
+        for (let j = 0; j<5;j++) {
+            dong += banCo[i][j] + "&nbsp;&nbsp"
+        }
+    }
+    dong += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+    b = document.getElementById("caroGame").innerHTML = dong;
+</script>
+</body>
+</html>

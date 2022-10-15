@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let arrayNum = [9, 3, 8, 5, 35, 71, 24, 21, 20, 43];
+    let num = parseInt(prompt("Enter a number: "));
+    let ss = false;
+
+    for (let i = 0; i < arrayNum.length; i++) {
+        if (arrayNum[i] == num) {
+            ss=true;
+            alert(num + " is in the array");
+            arrayNum.splice(i,1);
+            arrayNum.push("0");
+            break;
+        }
+    }
+    if (ss==false) {
+        alert(num + " is not in the array")
+    }
+    document.write(arrayNum)
+</script>
+</body>
+</html>

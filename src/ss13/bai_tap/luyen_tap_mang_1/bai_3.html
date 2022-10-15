@@ -6,21 +6,27 @@
 </head>
 <body>
 <script>
-    let arrayTB = [212, 147, 265, 34, 431, 153, 15, 51, 142, 12, 21, 424];
-    let max = arrayTB[0];
-    let viTri=0;
-    let tong=0;
-    let tb;
+    let arrayTB = [];
+    let num = parseInt(prompt("The number of elements of the array is: "));
 
-    for (let i = 1; i < arrayTB.length; i++) {
+    for (let i = 0; i < num; i++) {
+        arrayTB[i] = parseInt(prompt("Enter elemant: " + i));
+    }
+
+    let max = arrayTB[0];
+    let viTri = 0;
+    let tong = 0;
+    let tb = 0;
+
+    for (let i = 0; i < arrayTB.length; i++) {
+        tong += arrayTB[i];
         if (max < arrayTB[i]) {
             max = arrayTB[i];
-            viTri=i;
+            viTri = i;
         }
-        tong += arrayTB[i];
     }
-    tb=tong/arrayTB.length;
-    document.write("Giá trị lớn nhất là: " + max + " ở vị trí thứ: " + viTri)
+    document.write("Số lớn nhất là " + max + " ở vị trí thứ " + (viTri+1))
+    tb = tong / num;
     document.write("<br>")
     document.write("Giá trị trung bình của mảng là: " + tb)
 </script>

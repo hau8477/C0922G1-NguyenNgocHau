@@ -6,12 +6,15 @@
 </head>
 <body>
 <script>
-    let arr=[123,214,757,314,648,434,153,163,636,316];
+    let arrayDN = [];
+    for (let i=0; i<10;i++) {
+        arrayDN[i]= parseInt(prompt("Enter elemant: " + i));
+    }
 
-    arr.sort(function (a,b) {
+    arrayDN.sort(function (a,b) {
         return b-a
     })
-    document.write(arr);
+    document.write(arrayDN);
 </script>
 </body>
 </html>

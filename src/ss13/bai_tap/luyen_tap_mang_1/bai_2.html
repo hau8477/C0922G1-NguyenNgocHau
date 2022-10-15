@@ -6,16 +6,20 @@
 </head>
 <body>
 <script>
-    let arrayNum = [123, 334, 315, 123, 424, 241, 436, 874, 424, 653];
+    let arrayNum = [];
+    for (let i = 0; i < 10; i++) {
+        arrayNum[i] = parseInt(prompt("Enter elemant: " + i));
+    }
     let max = arrayNum[0];
-    let viTri=0;
+    let viTri = 0;
+
     for (let i = 1; i < arrayNum.length; i++) {
         if (max < arrayNum[i]) {
             max = arrayNum[i];
-            viTri=i;
+            viTri = i;
         }
     }
-    document.write("Số lớn nhất là " + max + " ở vị trí thứ " + viTri)
+    document.write(  max + " is the largest number in position " + (viTri+1))
 </script>
 </body>
 </html>

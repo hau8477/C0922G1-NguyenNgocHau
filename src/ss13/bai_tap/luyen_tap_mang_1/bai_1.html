@@ -6,14 +6,19 @@
 </head>
 <body>
 <script>
-    let arraySN= [10,11,5,1,2,41,214,34,9,8];
+    let arrayDN = [];
     let dem=0;
-    for (let j=0; j<arraySN.length;j++) {
-        if (arraySN[j] >= 10 ) {
+
+    for (let i=0; i<10;i++) {
+        arrayDN[i]= parseInt(prompt("Enter elemant: " + i));
+    }
+
+    for (let j=0; j<arrayDN.length;j++) {
+        if (arrayDN[j] >= 10 ) {
             dem +=1;
         }
     }
-    alert("Có " + dem + " số nguyên lớn hơn hoặc bằng 10")
+    alert( dem + " integer greater than or equal to 10")
 </script>
 </body>
 </html>

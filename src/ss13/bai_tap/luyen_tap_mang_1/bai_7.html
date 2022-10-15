@@ -6,7 +6,11 @@
 </head>
 <body>
 <script>
-    let arrayNum = [9, 3, 8, 5, 35, 71, 24, 21, 20, 43];
+    let arrayNum = [];
+    for (let i=0; i<10;i++) {
+        arrayNum[i]= parseInt(prompt("Enter elemant: " + i))
+    }
+
     let num = parseInt(prompt("Enter a number: "));
     let ss = false;
 

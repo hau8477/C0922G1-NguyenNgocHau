@@ -6,19 +6,24 @@
 </head>
 <body>
 <script>
-    let arrayNum = [9, 3, 8, 5, 35, 71, 24, 21, 20, 43];
-    let num = parseInt(prompt("Enter a number: "));
+    let arrayNum = [];
+
+    for (let i=0; i<10;i++) {
+        arrayNum[i]= parseInt(prompt("Enter elemant: " + i))
+    }
+
+    let numCheck = parseInt(prompt("Enter a number: "));
     let ss = false;
 
     for (let i = 0; i < arrayNum.length; i++) {
-        if (arrayNum[i] == num) {
+        if (arrayNum[i] == numCheck) {
             ss=true;
-            alert(num + " is in the array");
+            alert(numCheck + " is in the array");
             break;
         }
     }
     if (ss==false) {
-        alert(num + " is not in the array")
+        alert(numCheck + " is not in the array")
     }
 </script>
 </body>

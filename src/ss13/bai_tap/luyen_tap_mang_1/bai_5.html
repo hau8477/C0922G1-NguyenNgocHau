@@ -6,15 +6,20 @@
 </head>
 <body>
 <script>
-    let arrayNA = [412, -141, 472, 123, 12, -125, -246];
+    let arrayDN = [];
+    let num = parseInt(prompt("The number of elements of the array is: "));
     let demNA = 0;
 
-    for (let i = 0; i < arrayNA.length; i++) {
-        if (arrayNA[i] < 0) {
+    for (let i=0; i<num;i++) {
+        arrayDN[i]= parseInt(prompt("Enter elemant: " + i));
+    }
+
+    for (let i = 0; i < arrayDN.length; i++) {
+        if (arrayDN[i] < 0) {
             demNA += 1;
         }
     }
-    document.write("Có: " + demNA + " số nguyên âm" )
+    alert( demNA + " negative integers" )
 </script>
 </body>
 </html>

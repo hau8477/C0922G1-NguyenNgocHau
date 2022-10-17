@@ -7,10 +7,10 @@
 <body>
 <script>
     let character = prompt("Enter a character");
-    let array = character.split("")
+    let array = character.split("");
     for (let i = 1; i < array.length; i++) {
         if (array[i] == "-") {
-            array.splice(i, 1, "_")
+            array.splice(i, 1, "_");
         }
     }
     alert(array.join(""));

@@ -10,7 +10,7 @@
     let num = parseInt(prompt("Enter the number of elements of the array"))
 
     for (let i = 0; i < num; i++) {
-        arr[i] = prompt("Enter a character " + i)
+        arr[i] = prompt("Enter a character " + i);
     }
     let first = 0;
     let last = arr.length - 1;
@@ -20,7 +20,7 @@
         arr[first] = arr[last];
         arr[last] = b;
         first++;
-        last--
+        last--;
     }
     document.write(arr);
 </script>

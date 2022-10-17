@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let character = prompt("Enter a character");
+    let array = character.split("")
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] == "-") {
+            array.splice(i, 1, "_")
+        }
+    }
+    document.write(array.join(""));
+</script>
+</body>
+</html>

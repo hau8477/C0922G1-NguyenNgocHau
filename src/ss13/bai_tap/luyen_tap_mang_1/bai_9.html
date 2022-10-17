@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    let arrayA = [];
+    let arrayB = [];
+
+    for (let i =0; i<10;i++) {
+        arrayA[i] = parseInt(prompt("Enter a number of array A[" + i + "]"));
+    }
+
+    for (let i =0; i<10;i++) {
+        arrayB[i] = parseInt(prompt("Enter a number of array B[" + i + "]"));
+    }
+
+    let arrayC = arrayA.concat(arrayB);
+    document.write(arrayC)
+</script>
+</body>
+</html>

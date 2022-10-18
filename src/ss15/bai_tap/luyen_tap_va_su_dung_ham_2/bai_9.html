@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    function checkCharacter(a) {
+        let num = parseInt(prompt("Enter number of array"));
+        let array = [];
+
+        for (let i = 0; i < num; i++) {
+            array[i] = prompt("Enter character of array ");
+        }
+
+        count = 0;
+
+        for (let j = 0; j < array.length; j++) {
+            if (a == array[j]) {
+                count += 1;
+            }
+        }
+        if (count == 0) {
+            alert("-1");
+        } else alert(a + " appears " + count + " times");
+    }
+
+    let character = prompt("Enter a charater");
+    checkCharacter(character);
+</script>
+</body>
+</html>

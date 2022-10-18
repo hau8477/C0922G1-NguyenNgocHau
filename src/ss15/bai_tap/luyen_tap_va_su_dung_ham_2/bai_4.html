@@ -8,19 +8,18 @@
 <script>
     function checkNum(a) {
         let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        var check = true;
+        let result = true;
 
         for (let i = 0; i < array.length; i++) {
-            if (a != array[i]) {
-                check = false;
-            }
-        } if (check == true) {
-            alert(a + " is number");
-        } else alert(a + " is not number");
+            if (array[i] == a) {
+                result = true;
+                break;
+            } else result = false;
+        }
+        alert(result);
     }
 
     let character = prompt("Enter a character: ");
-    console.log(character)
     checkNum(character);
 </script>
 </body>

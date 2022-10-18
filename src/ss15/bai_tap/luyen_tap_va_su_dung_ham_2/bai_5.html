@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    function min(a, b, c) {
+        if (a < b) {
+            if (a < c) {
+                alert(a + " is the smallest number");
+            } else if (b < c) {
+                alert(b + " is the smallest number");
+            } else alert(c + " is the smallest number");
+        }
+    }
+
+    let num1 = parseInt(prompt("Enter a number 1: "));
+    let num2 = parseInt(prompt("Enter a number 2: "));
+    let num3 = parseInt(prompt("Enter a number 3: "));
+    min(num1, num2, num3);
+</script>
+</body>
+</html>

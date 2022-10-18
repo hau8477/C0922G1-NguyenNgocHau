@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    function checkNum(a) {
+        let check;
+        if (a<0) {
+            check=false;
+            alert(a + " is a negative number");
+        } else if (a>0) {
+            check=true;
+            alert(a + " is a positive number");
+        } else alert(a+ " is a number 0")
+    }
+
+    let num=parseInt(prompt("Enter a number:"));
+    checkNum(num);
+</script>
+</body>
+</html>

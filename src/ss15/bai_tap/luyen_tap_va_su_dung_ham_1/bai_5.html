@@ -10,17 +10,17 @@
     let arrayStar2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
 
     function checkStar(check) {
-        let result = "";
+        let checkS = true;
 
         for (let i = 0; i < arrayStar1.length; i++) {
             if (check == arrayStar1[i]) {
-                result = arrayStar2[i];
-                alert(result);
+                alert(arrayStar2[i]);
+                checkS=true;
                 break;
-            } else {
-                alert("No stars found");
-                break;
-            }
+            } else checkS = false;
+        }
+        if (checkS == false) {
+            alert(check + " not is found");
         }
     }
 

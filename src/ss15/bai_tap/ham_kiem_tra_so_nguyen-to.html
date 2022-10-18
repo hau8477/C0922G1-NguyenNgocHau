@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố </title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Enter a number to check"));
+    checkPrime(number);
+
+    function checkPrime(num) {
+        let check = true;
+        if (num < 2) {
+            alert(num + " is not a prime number");
+        } else {
+            for (let i = 2; i < (num - 1); i++) {
+                if (num % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        if (check == true) {
+            alert(num + " is a prime number")
+        } else alert(num + " is not a prime number")
+    }
+
+</script>
+</body>
+</html>

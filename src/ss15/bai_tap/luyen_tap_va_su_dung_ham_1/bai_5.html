@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5 </title>
+</head>
+<body>
+<script>
+    let arrayStar1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arrayStar2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function checkStar(check) {
+        let result = "";
+
+        for (let i = 0; i < arrayStar1.length; i++) {
+            if (check == arrayStar1[i]) {
+                result = arrayStar2[i];
+                alert(result);
+                break;
+            } else {
+                alert("No stars found");
+                break;
+            }
+        }
+    }
+
+    let star = prompt("Enter a star: ");
+    checkStar(star);
+</script>
+</body>
+</html>

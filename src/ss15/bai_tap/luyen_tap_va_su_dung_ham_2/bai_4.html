@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    function checkNum(a) {
+        let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var check = true;
+
+        for (let i = 0; i < array.length; i++) {
+            if (a != array[i]) {
+                check = false;
+            }
+        } if (check == true) {
+            alert(a + " is number");
+        } else alert(a + " is not number");
+    }
+
+    let character = prompt("Enter a character: ");
+    console.log(character)
+    checkNum(character);
+</script>
+</body>
+</html>

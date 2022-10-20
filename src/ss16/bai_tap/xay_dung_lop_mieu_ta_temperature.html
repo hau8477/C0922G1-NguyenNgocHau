@@ -10,17 +10,23 @@
         constructor(c) {
             this.c = c;
         }
+
         switchF() {
-             return this.c*1.8 + 32;
+            return this.c * 1.8 + 32;
         }
+
         switchK() {
             return this.c + 273.15;
         }
     }
 
-    let c = new SwitchTemperature(parseInt(prompt("Enter current temperature ")));
-    document.write("Temperature F: " + c.switchF() + "<br>");
-    document.write("Temperature K: " + c.switchK());
+    let c = parseFloat(prompt("Enter current temperature "));
+    let temperatureC = new SwitchTemperature(c);
+    if (c >= -273) {
+        document.write("Temperature F: " + temperatureC.switchF() + "<br>");
+        document.write("Temperature K: " + temperatureC.switchK());
+    } else alert("The temperature you entered is not valid");
+
 </script>
 </body>
 </html>

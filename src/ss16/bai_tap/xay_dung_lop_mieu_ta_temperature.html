@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp miêu tả temperature</title>
+</head>
+<body>
+<script>
+    class SwitchTemperature {
+        constructor(c) {
+            this.c = c;
+        }
+        switchF() {
+             return this.c*1.8 + 32;
+        }
+        switchK() {
+            return this.c + 273.15;
+        }
+    }
+
+    let c = new SwitchTemperature(parseInt(prompt("Enter current temperature ")));
+    document.write("Temperature F: " + c.switchF() + "<br>");
+    document.write("Temperature K: " + c.switchK());
+</script>
+</body>
+</html>

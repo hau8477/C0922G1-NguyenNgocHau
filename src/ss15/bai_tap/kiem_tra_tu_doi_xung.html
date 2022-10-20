@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng </title>
+</head>
+<body>
+<script>
+    function checkSymmetry(string) {
+        let check = true;
+        for (let i = 0; i < string.length; i++) {
+            if (string[i] != string[string.length - i - 1]) {
+                check = false;
+                break;
+            }
+        }
+        if (check == true) {
+            alert(string + " is symmetric");
+        } else alert(string + " is not symmetric");
+    }
+
+    let stringC = prompt("Enter a string");
+    checkSymmetry(stringC);
+</script>
+</body>
+</html>

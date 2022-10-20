@@ -21,12 +21,14 @@
     }
 
     let c = parseFloat(prompt("Enter current temperature "));
-    let temperatureC = new SwitchTemperature(c);
-    if (c >= -273) {
-        document.write("Temperature F: " + temperatureC.switchF() + "<br>");
-        document.write("Temperature K: " + temperatureC.switchK());
-    } else alert("The temperature you entered is not valid");
 
+    while (c < -273) {
+        alert("The temperature you entered is not valid");
+        c = parseFloat(prompt("Enter current temperature "));
+    }
+    let temperatureC = new SwitchTemperature(c);
+    document.write("Temperature F: " + temperatureC.switchF() + "<br>");
+    document.write("Temperature K: " + temperatureC.switchK());
 </script>
 </body>
 </html>

@@ -66,16 +66,17 @@
     human1.say("Tôi là: " + human1.name);
     human2.say("Tôi là: " + human2.name);
     human1.check(apple);
+    document.write("<hr style='width: 250px; float: left'>" + "<br>");
 
     while (apple.weight > 0) {
         document.write(human1.name + " ăn táo " + "<br>");
         document.write("Cân nặng của " + human1.name + " là: " + human1.eat(apple) + " dv" + "<br>");
         document.write("Quả táo còn: " + apple.decreaseWeightApple() + " dv " + "<br><br>");
-
+        document.write("<hr style='width: 250px; float: left'>" + "<br>");
         document.write(human2.name + " ăn táo " + "<br>");
         document.write("Cân nặng của " + human2.name + " là: " + human2.eat(apple) + " dv" + "<br>");
         document.write("Quả táo còn: " + apple.decreaseWeightApple() + " dv " + "<br><br>");
-
+        document.write("<hr style='width: 250px; float: left'>" + "<br>");
     }
 
     human1.check(apple);

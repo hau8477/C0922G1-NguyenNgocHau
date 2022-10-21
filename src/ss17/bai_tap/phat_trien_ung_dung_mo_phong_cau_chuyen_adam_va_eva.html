@@ -11,10 +11,18 @@
             this.weight = weight;
         }
 
+        getWeight() {
+            return this.weight;
+        }
+
+        isEmpty() {
+            if (this.weight <= 0) {
+                return true;
+            } else return false;
+        }
+
         decreaseWeightApple() {
-            if (this.weight > 0) {
-                return this.weight - 1;
-            }
+            return this.weight -= 1;
         }
     }
 
@@ -25,32 +33,52 @@
             this.weight = weight;
         }
 
-        eatApple() {
-            if (apple.weight>0) {
-                apple.decreaseWeightApple();
-                return this.weight +=1;
+        getWeight() {
+            return this.weight;
+        }
+
+        check(apple) {
+            if (apple.isEmpty()) {
+                console.log("Táo đã hết rồi");
+            } else console.log("Táo vẫn còn");
+
+        }
+
+        eat(apple) {
+            if (apple.isEmpty() == false) {
+                this.weight += 1;
+                return this.weight;
             }
+        }
+
+        say(string) {
+            return console.log(string);
         }
     }
 
-    let weight = 10;
-    let apple = new Apple(weight);
-    document.write("Quả táo nặng " + apple.weight + " dv" + "<br>");
-    let human1 = new Human("Adam", "nam", 65);
-    document.write(human1.name + " là " + human1.gender + " nặng " + human1.weight + " dv" + "<br>");
-    let human2 = new Human("Eva", "nữ", 55);
-    document.write(human2.name + " là " + human2.gender + " nặng " + human2.weight + " dv" + "<br><br>");
 
-    while (apple.weight>0) {
+    let apple = new Apple(10);
+    let human1 = new Human("Adam", "nam", 65);
+    document.write(human1.name + " là " + human1.gender + " nặng: " + human1.getWeight() + " dv" + "<br>");
+    let human2 = new Human("Eva", "nữ", 55);
+    document.write(human2.name + " là " + human2.gender + " nặng: " + human2.getWeight() + " dv" + "<br>");
+    document.write("Quả táo nặng: " + apple.getWeight() + " dv" + "<br><br>");
+    human1.say("Tôi là: " + human1.name);
+    human2.say("Tôi là: " + human2.name);
+    human1.check(apple);
+
+    while (apple.weight > 0) {
         document.write(human1.name + " ăn táo " + "<br>");
-        document.write("Quả táo còn: " + apple.decreaseWeightApple() + " dv" + "<br>");
-        document.write("Cân nặng của " + human1.name + " là " + human1.eatApple() + " dv" + "<br>");
-        apple.weight -=1;
+        document.write("Cân nặng của " + human1.name + " là: " + human1.eat(apple) + " dv" + "<br>");
+        document.write("Quả táo còn: " + apple.decreaseWeightApple() + "<br><br>");
+
         document.write(human2.name + " ăn táo " + "<br>");
-        document.write("Quả táo còn: " + apple.decreaseWeightApple() + " dv" + "<br>");
-        document.write("Cân nặng của " + human2.name + " là " + human2.eatApple() + " dv" + "<br><br>");
-        apple.weight -=1;
+        document.write("Cân nặng của " + human2.name + " là: " + human2.eat(apple) + " dv" + "<br>");
+        document.write("Quả táo còn: " + apple.decreaseWeightApple() + "<br><br>");
+
     }
+
+    human1.check(apple);
 </script>
 </body>
 </html>

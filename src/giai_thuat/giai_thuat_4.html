@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập chuỗi số").split("");
+    let array = [];
+
+    for (let i = 0; i < n.length; i++) {
+        if (array.indexOf(n[i]) === -1) {
+            array.push(n[i]);
+        }
+    }
+    let arrayNew = [];
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < n.length; j++) {
+            if (array[i] == n[j]) {
+                count += 1;
+            }
+        }
+        arrayNew.push(count);
+        count = 0;
+    }
+    document.write(arrayNew + "<br>")
+    let check = true;
+    for (let i = 0; i < arrayNew.length; i++) {
+        for (let j = 1; j < arrayNew.length; j++) {
+            if (arrayNew[i] != arrayNew[j]) {
+                check = false;
+                break;
+            }
+        }
+    }
+    document.write(check);
+</script>
+</body>
+</html>

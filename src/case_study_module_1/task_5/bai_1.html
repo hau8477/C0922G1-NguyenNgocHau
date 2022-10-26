@@ -6,16 +6,30 @@
 </head>
 <body>
 <script>
-    let m = parseInt(prompt("Nhập độ dài ma trận"));
-    let n = parseInt(prompt("Nhập độ rộng ma trận"));
-    let mang = [];
+    let m = parseInt(prompt("Nhập độ dài mảng 1"));
+    let n = parseInt(prompt("Nhập độ dài mảng 2"));
+    let mang1 = [];
+    let mang2 = [];
 
-    for ( let i = 0; i < m ; i++) {
-        for (let j = 0; j <n ; j++) {
-            mang[i][j] = parseInt(prompt("Nhập các giá trị cho ma trận"));
+    for (let i = 0; i < m; i++) {
+        mang1[i] = parseInt(prompt("Nhập phần tử mảng 1"));
+    }
+
+    for (let i = 0; i < n; i++) {
+        mang2[i] = parseInt(prompt("Nhập phần tử mảng 2"));
+    }
+    let mang = [mang1, mang2];
+    document.write("[" + mang1 + "]" + "<br>" + "[" + mang2 + "]" + "<br>");
+    let sum = 0;
+
+    for (let i = 0; i < mang.length; i++) {
+        for (let j = 0; j < mang[i].length; j++) {
+            if (mang[i][j] % 2 == 0) {
+                sum += mang[i][j];
+            }
         }
     }
-    document.write(mang);
+    document.write("Tổng các số chẵn có trong ma trận là: " + sum);
 </script>
 </body>
 </html>

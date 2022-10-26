@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            width: 40px;
+            text-align: center;
+            font-weight: bold;
+
+        }
+
+        table {
+            background-color: #e0f8c7;
+            /*border: 1px solid black;*/
+            max-width: max-content;
+            margin: auto;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 30px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    </style>
+</head>
+<body style="background-color: #8b8282">
+<div style="background-color: #9794d9; height: 150px; margin-left: 350px; margin-right: 350px">
+    <h1 style="margin-left: 40%; padding-top: 2.5%">Xổ số</h1>
+    <span style="margin-left: 5.2%"><b>Dự đoán: </b>
+        <input onchange="hienSo(this.id)" type="text" maxlength="2" id="guess1">
+        <input onchange="hienSo(this.id)" type="text" maxlength="2" id="guess2">
+        <input onchange="hienSo(this.id)"  type="text" maxlength="2" id="guess3">
+        <input  onchange="hienSo(this.id)" type="text" maxlength="2" id="guess4">
+        <input  onchange="hienSo(this.id)" type="text" maxlength="2" id="guess5">
+        <input  onchange="hienSo(this.id)" type="text" maxlength="2" id="guess6">
+        <button onclick="muaVe()" style="background-color:#b1b8b1">Mua Vé</button></span>
+    <br><br>
+
+    <span style="margin-left: 6%"><b>Kết quả: </b>
+        <input oninput="hienSo(this.id)"  type="text" maxlength="2" id="result1">
+        <input oninput="hienSo(this.id)" type="text" maxlength="2" id="result2">
+        <input oninput="hienSo(this.id)"  type="text" maxlength="2" id="result3">
+        <input oninput="hienSo(this.id)" type="text" maxlength="2" id="result4">
+        <input oninput="hienSo(this.id)"  type="text" maxlength="2" id="result5">
+        <input oninput="hienSo(this.id)" type="text" maxlength="2" id="result6">
+        <button onclick="xemKetQua()" style="background-color: #ee3737">Xem kết quả</button></span>
+</div>
+<table id="creatTable"></table>
+
+<script>
+    let chon = prompt('Bạn có 2 lựa chọn: \n 1. Bạn tự chọn số \n 2. Hệ thống tự random.')
+    kiemTraChon(chon);
+    function hienSo(h) {
+        let j;
+        let k = +document.getElementById(h).value;
+        if(k<10){
+            j = "0" + k
+            document.getElementById(h).value = j
+        }
+    }
+    function kiemTraChon() {
+        while (isNaN(chon) || chon < 1 || chon > 2) {
+            chon = prompt("Mời bạn nhập số đúng lựa chọn: \n 1. Bạn tự chọn số \n 2. Hệ thống tự random.")
+        }
+        if (chon == 2) {
+            random('guess1');
+            random('guess2');
+            random('guess3');
+            random('guess4');
+            random('guess5');
+            random('guess6');
+        }
+    }
+
+    function random(a) {
+        let f =  (Math.floor(Math.random() * 99));
+        if(f<10){
+            let j = "0" + f
+            document.getElementById(a).value = j
+        }else
+            document.getElementById(a).value = f
+    }
+
+    function xemKetQua() {
+        if (luotMua == 0) {
+            alert("Bạn chưa mua vé");
+        } else {
+            random('result1');
+            random('result2');
+            random('result3');
+            random('result4');
+            random('result5');
+            random('result6');
+            taoVeKetQua();
+            console.log(veKetQua);
+            for (let i = 0; i < veDaMua.length; i++) {
+                veKetQua.checkGiai(veDaMua[i])
+            }
+        }
+    }
+
+    let luotMua = 0;
+    function muaVe() {
+        if (luotMua === 4) {
+            alert("Bạn đã hết lượt mua vé.")
+        } else if (luotMua < 4) {
+            if (checkNhap('guess1') === false || checkNhap('guess2') === false || checkNhap('guess3') === false
+                || checkNhap('guess4') === false || checkNhap('guess5') === false || checkNhap('guess6') === false)
+            {
+                alert("Vé của bạn không phù hợp.")
+
+            } else {
+                luotMua++;
+                themVe();
+                creat();
+                alert("Bạn đã mua: " + luotMua + " vé");
+                console.log(veDaMua)
+                let c = confirm("Bạn muốn mua vé nữa không?")
+                if (c == true) {
+                    chon = prompt('Bạn có 2 lựa chọn: \n 1. Bạn tự chọn số \n 2. Hệ thống tự random.')
+                    kiemTraChon(chon);
+                }
+            }
+        }
+    }
+
+    function checkNhap(k) {
+        let l = document.getElementById(k).value
+        if (l < 1 || l > 99) {
+            return false;
+        }
+    }
+
+    let veDaMua = [];
+
+    function themVe() {
+        let k1 = document.getElementById("guess1").value
+        let k2 = document.getElementById("guess2").value
+        let k3 = document.getElementById("guess3").value
+        let k4 = document.getElementById("guess4").value
+        let k5 = document.getElementById("guess5").value
+        let k6 = document.getElementById("guess6").value
+        let muave = new Ve(k1, k2, k3, k4, k5, k6);
+        veDaMua.push(muave);
+    }
+
+    class Ve {
+        constructor(s1, s2, s3, s4, s5, s6) {
+            this.s1 = s1;
+            this.s2 = s2;
+            this.s3 = s3;
+            this.s4 = s4;
+            this.s5 = s5;
+            this.s6 = s6;
+        }
+
+        gets1() {
+            return this.s1;
+        }
+
+        gets2() {
+            return this.s2;
+        }
+
+        gets3() {
+            return this.s3;
+        }
+
+        gets4() {
+            return this.s4;
+        }
+
+        gets5() {
+            return this.s5;
+        }
+
+        gets6() {
+            return this.s6;
+        }
+
+        checkGiai(veDaMua) {
+            if (veDaMua.s1 == this.gets1() && veDaMua.s2 == this.gets2() && veDaMua.s3 == this.gets3()
+                && veDaMua.s4 == this.gets4() && veDaMua.s5 == this.gets5() && veDaMua.s6 == this.gets6()) {
+                alert('Chúc mừng bạn đã trúng giải nhất');
+            } else if (veDaMua.s2 == this.gets2() && veDaMua.s3 == this.gets3()
+                && veDaMua.s4 == this.gets4() && veDaMua.s5 == this.gets5() && veDaMua.s6 == this.gets6()) {
+                alert("Chúc mừng bạn đã trúng giải nhì");
+            } else if (veDaMua.s4 == this.gets4() && veDaMua.s5 == this.gets5() && veDaMua.s6 == this.gets6()) {
+                alert("Chúc mừng bạn đã trúng giải khuyến khích");
+            } else
+                alert("Chúc bạn may mắn lần sau");
+        }
+    }
+    let veKetQua;
+    function taoVeKetQua() {
+        let k1 = document.getElementById("result1").value
+        let k2 = document.getElementById("result2").value
+        let k3 = document.getElementById("result3").value
+        let k4 = document.getElementById("result4").value
+        let k5 = document.getElementById("result5").value
+        let k6 = document.getElementById("result6").value
+        veKetQua = new Ve(k1, k2, k3, k4, k5, k6);
+    }
+    function creat() {
+        console.log(veDaMua)
+        let data = '<tr><th>Vé đã mua</th></tr>'
+        for (let i = 0; i < veDaMua.length; i++) {
+            data += '<tr>'
+            data += '<td> Vé ' + (i + 1) + ": " + veDaMua[i].gets1() +" "+ veDaMua[i].gets2() +" "+ veDaMua[i].gets3()
+                +" "+ veDaMua[i].gets4() +" "+ veDaMua[i].gets5() +" "+ veDaMua[i].gets6() + '</td>'
+            data += '</tr>'
+        }
+        document.getElementById("creatTable").innerHTML = data;
+    }
+</script>
+
+</body>
+</html>

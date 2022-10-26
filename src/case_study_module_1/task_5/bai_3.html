@@ -5,6 +5,32 @@
     <title>Task 5 - Bài 3</title>
 </head>
 <body>
+<script>
+    let m = parseInt(prompt("Nhập độ dài mảng 1"));
+    let n = parseInt(prompt("Nhập độ dài mảng 2"));
+    let mang1 = [];
+    let mang2 = [];
 
+    for (let i = 0; i < m; i++) {
+        mang1[i] = parseInt(prompt("Nhập phần tử mảng 1"));
+    }
+
+    for (let i = 0; i < n; i++) {
+        mang2[i] = parseInt(prompt("Nhập phần tử mảng 2"));
+    }
+    let mang = [mang1, mang2];
+    document.write("[" + mang1 + "]" + "<br>" + "[" + mang2 + "]" + "<br>");
+    let maxMang = 0;
+    let minMang = 0;
+
+    for (let i = 0; i < mang.length; i++) {
+        for (let j = 0; j < mang[i].length; j++) {
+            if (maxMang < mang[i][j]) {
+                maxMang = mang[i][j];
+            } else minMang = mang[i][j];
+        }
+    }
+    document.write("Giá  trị lớn nhất, nhỏ nhất của mảng 2 chiều là: " + maxMang + "," + minMang)
+</script>
 </body>
 </html>

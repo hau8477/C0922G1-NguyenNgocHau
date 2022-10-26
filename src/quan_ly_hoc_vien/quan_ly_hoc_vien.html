@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý học viên</title>
+</head>
+<body>
+<img src="c62d0c0c-dbe3-11e7-bf25-56c566ee3692.jpg" height="200" width="1500"/>
+<p style="text-align: center;font-size: 50px;background-color: lightskyblue">QUẢN LÝ HỌC VIÊN</p>
+<table border="1" style="width: 500px; height: 300px;float: left">
+    <tr>
+        <th colspan="4" style="font-size: 30px;color: red;background-color: aqua">Thông tin học viên</th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>ID</th>
+        <th colspan="3"><input id="id" type="number"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Họ và tên</th>
+        <th colspan="3"><input id="name" type="text"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Ngày sinh</th>
+        <th colspan="3"><input id="date" type="date"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Giới tính</th>
+        <th colspan="3"><input id="gender" type="text"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Lớp</th>
+        <th colspan="3"><input id="grade" type="text"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Ảnh</th>
+        <th colspan="3"><input id="picture" type="url"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th></th>
+        <th colspan="3">
+            <button style="background-color: limegreen" type="button" onclick="addData()">Add</button>
+            <button style="background-color: gold" type="button" onclick="saveHS()">Save</button>
+        </th>
+    </tr>
+</table>
+<p id="result" style="float: right"></p>
+<script>
+
+    function view() {
+        let table = "<table border='1' style='width: 700px'>";
+        table += "<tr>";
+        table += "<th colspan='6' style='font-size: 30px;color: red;background-color: aqua'>" + "DANH SÁCH HỌC VIÊN" + "</th>";
+        table += "<th id='tongHS' style='background-color: aqua;color: brown'>" + "</th>";
+        table += "</tr>";
+        table += "<tr style='background-color: lightblue'>";
+        table += "<th>" + "ID" + "</th>";
+        table += "<th>" + "HỌ và tên" + "</th>";
+        table += "<th>" + "Ngày sinh" + "</th>";
+        table += "<th>" + "Giới tính" + "</th>";
+        table += "<th>" + "Lớp" + "</th>";
+        table += "<th>" + "Ảnh" + "</th>";
+        table += "<th>" + "Tùy chọn" + "</th>";
+        table += "</tr>";
+
+        for (let i = 0; i < danhSachHocSinh.length; i++) {
+            table += "<tr style='background-color: lightblue'>";
+            table += "<th>" + danhSachHocSinh[i].id + "</th>";
+            table += "<th>" + danhSachHocSinh[i].name + "</th>";
+            table += "<th>" + danhSachHocSinh[i].date + "</th>";
+            table += "<th>" + danhSachHocSinh[i].gender + "</th>";
+            table += "<th>" + danhSachHocSinh[i].grade + "</th>";
+            table += "<th><img width='100px' height='100px' src='" + danhSachHocSinh[i].picture + "'/></th>";
+            table += "<th>" + "<button type='button' onclick='editHS(" + i + ")' style='background-color: goldenrod'> Edit </button>      " +
+                "<button type='button' onclick='deleteHS(" + i + ")' style='background-color: red'> Delete </button>";
+            table += "</th>";
+            table += "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("result").innerHTML = table;
+        document.getElementById("tongHS").innerHTML = "Tổng: " + danhSachHocSinh.length + " Học viên";
+    }
+
+    let danhSachHocSinh = [];
+
+    function clear() {
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("gender").value = "";
+        document.getElementById("grade").value = "";
+        document.getElementById("picture").value = "";
+    }
+
+    function addData() {
+        let id = parseInt(document.getElementById("id").value);
+        let name = document.getElementById("name").value;
+        let date = document.getElementById("date").value;
+        let gender = document.getElementById("gender").value;
+        let grade = document.getElementById("grade").value;
+        let picture = document.getElementById("picture").value;
+
+        let hocSinh = {
+            id: id,
+            name: name,
+            date: date,
+            gender: gender,
+            grade: grade,
+            picture: picture,
+        }
+        danhSachHocSinh.push(hocSinh);
+        view();
+        clear();
+    }
+
+    function deleteHS(i) {
+        danhSachHocSinh.splice(i, 1);
+        view();
+    }
+
+    let idCurrent = -1;
+
+    function editHS(i) {
+        idCurrent = i;
+        clear();
+        document.getElementById("id").value = danhSachHocSinh[i].id;
+        document.getElementById("name").value = danhSachHocSinh[i].name;
+        document.getElementById("date").value = danhSachHocSinh[i].date;
+        document.getElementById("gender").value = danhSachHocSinh[i].gender;
+        document.getElementById("grade").value = danhSachHocSinh[i].grade;
+        document.getElementById("picture").value = danhSachHocSinh[i].picture;
+    }
+
+    function saveHS() {
+        danhSachHocSinh[idCurrent].id = document.getElementById("id").value;
+        danhSachHocSinh[idCurrent].name = document.getElementById("name").value;
+        danhSachHocSinh[idCurrent].date = document.getElementById("date").value;
+        danhSachHocSinh[idCurrent].gender = document.getElementById("gender").value;
+        danhSachHocSinh[idCurrent].grade = document.getElementById("grade").value;
+        danhSachHocSinh[idCurrent].picture = document.getElementById("picture").value;
+        view();
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4 - Bài 1</title>
+</head>
+<body>
+<script>
+    let string = prompt("Mời bạn nhập vào một chuỗi");
+    array = string.toLowerCase().split(" ");
+    document.write( "Trước khi chuẩn hóa: " + "<pre>" + string +"</pre>");
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] != "") {
+            array[i] = array[i][0].toUpperCase() + array[i].slice(1);
+        }
+    }
+    let maxArray = 0;
+    let result = "";
+    for (let i = 0; i < array.length; i++) {
+        if (maxArray < array[i].length) {
+            maxArray = array[i].length;
+            result = array[i];
+        }
+    }
+
+    document.write("Sau khi chuẩn hóa: " + array.join(" ") + "<br>");
+    document.write("Từ dài nhất trong chuỗi là: " + result)
+</script>
+</body>
+</html>

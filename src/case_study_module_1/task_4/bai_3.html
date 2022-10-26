@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4 - Bài 3</title>
+</head>
+<body>
+<script>
+    let string1 = prompt("Nhập chuỗi 1");
+    let string2 = prompt("Nhập chuỗi 2");
+    let arrayString1 = string1.split("");
+    let arrayString2 = string2.split("");
+    let count = 0;
+    let arrayNew = [];
+
+    for (let i = 0; i < arrayString1.length; i++) {
+        for (let j = 0; j < arrayString2.length; j++) {
+            if (arrayString1[i] == arrayString2[j]) {
+                count += 1;
+                arrayNew.push(arrayString1[i]);
+                arrayString1.splice(i, 1);
+            }
+        }
+    }
+    alert("Hai chuỗi 1 và chuỗi 2 có " + count + " kí tự chung là: " + arrayNew);
+</script>
+</body>
+</html>

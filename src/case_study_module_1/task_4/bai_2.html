@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4 - Bài 2</title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập vào một chuỗi kí tự");
+    let array = string.split("");
+    let result = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (result.indexOf(array[i]) === -1) {
+            result.push(array[i]);
+        }
+    }
+    document.write("Chuỗi " + string + " Có " + result.length + " kí tự khác nhau là: " + result)
+</script>
+</body>
+</html>

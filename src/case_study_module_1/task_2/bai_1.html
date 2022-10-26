@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2 - Bài 1</title>
+</head>
+<body>
+<script>
+    let luong = parseFloat(prompt("Nhập thu nhập tháng nay của bạn"));
+    let luongThuc = 0;
+
+    if (luong >= 15000000) {
+        thueThuNhap = luong * 0.2;
+        luongThuc = luong - thueThuNhap;
+    } else if (luong >= 7000000) {
+        thueThuNhap = luong * 0.1;
+        luongThuc = luong - thueThuNhap;
+    } else {
+        thueThuNhap = luong * 0.05;
+        luongThuc = luong - thueThuNhap;
+    }
+    alert("Thuế thu nhập tháng nay của bạn là: " + thueThuNhap + "VNĐ. Số tiền lương bạn thực sự nhận được là: " + luongThuc + "VNĐ");
+</script>
+</body>
+</html>

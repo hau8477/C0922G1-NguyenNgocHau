@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 - Bài 1</title>
+</head>
+<body>
+<script>
+    let mangA = [];
+    let mangB = [];
+    let doDaiMang = parseInt(prompt("Nhập số phần tử của mảng"));
+
+    for (let i = 0; i < doDaiMang; i++) {
+        mangA[i] = parseInt(prompt("Nhập phần tử thứ: " + (i + 1)))
+    }
+    document.write("[" + mangA + "]" + "<br>");
+
+    mangB[0] = mangA[0];
+    for (let i = 1; i < mangA.length; i++) {
+        mangB[i] = mangB[i - 1] + mangA[i];
+    }
+    document.write("[" + mangB + "]");
+</script>
+</body>
+</html>

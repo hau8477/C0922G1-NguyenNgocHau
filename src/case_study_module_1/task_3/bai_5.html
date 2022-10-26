@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 - Bài 5 </title>
+</head>
+<body>
+<h1>Menu</h1>
+<script>
+    alert("Chào mừng bạn đã đến với quán coffe của Ngọc Hậu!");
+    alert("Đây là danh sách đồ uống, mời bạn order!");
+    let doUong = ["Cà phê", "Cam vắt", "Nước ép cà chua", "Nước ép cà rốt", "Nước lọc", "Nước dừa"];
+    let menhGia = [35000, 30000, 25000, 25000, 10000, 15000];
+
+    for (let i = 0; i < doUong.length; i++) {
+        document.write((i + 1) + ". " + doUong[i] + "<br>")
+    }
+
+    let thanhTien = 0;
+
+    function order() {
+        do {
+            chonDoUong = parseInt(prompt("Bạn chọn đồ uống số mấy? (Nhấn số 7 để thoát gọi món)."));
+            for (let i = 0; i < doUong.length; i++) {
+                if ((chonDoUong - 1) == i) {
+                    alert(doUong[i] + " có giá tiền là " + menhGia[i] + " VNĐ");
+                    soLuong = parseInt(prompt("Bạn muốn mua " + doUong[i] + " với số lượng bao nhiêu?"))
+                    thanhTien += menhGia[i] * soLuong;
+                    alert("Tổng tiền tạm tính là " + thanhTien + " VNĐ. Nhấn OK để tiếp tục!")
+                }
+            }
+        } while (chonDoUong != 7);
+    }
+
+    function thanhToan() {
+        alert("Tổng số tiền cần thanh toán là: " + thanhTien + " VNĐ");
+    }
+</script>
+<button type="button" name="order" onclick="order()" style="float: bottom">Order</button>
+<button type="button" name="thanh toán" onclick="thanhToan()">Thanh toán</button>
+</body>
+</html>

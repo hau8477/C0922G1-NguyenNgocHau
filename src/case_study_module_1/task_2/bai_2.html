@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2 - Bài 2</title>
+</head>
+<body>
+<script>
+    let kiTu = prompt("Nhập vào 1 kí tự");
+    let nguyenAm = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E'];
+    let checkKiTu = false;
+
+    for (let i = 0;i <nguyenAm.length;i++) {
+        if (kiTu === nguyenAm[i]) {
+            checkKiTu = true;
+            break;
+        }
+    }
+
+    if (checkKiTu) {
+        alert("Kí tự " + kiTu + " là nguyên âm");
+    } else  alert("Kí tự " + kiTu + " không phải là nguyên âm");
+</script>
+</body>
+</html>

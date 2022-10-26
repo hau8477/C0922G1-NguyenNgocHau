@@ -23,29 +23,25 @@
     let count = 0;
     let mangMoi = [];
 
-
-    function checkPrime(num,mang) {
-        mang = [];
-        let check = true;
-        if (num > 2) {
-            for (let i = 2; i < (num - 1); i++) {
-                if (num % i == 0) {
-                    check = false;
-                    break;
+    for (let i = 0; i < mang.length; i++) {
+        for (let j = 0; j < mang[i].length; j++) {
+            let check = true;
+            if (mang[i][j] >= 2) {
+                for (let k = 2; k < mang[i][j]; k++) {
+                    if (mang[i][j] % k == 0) {
+                        check = false;
+                        break;
+                    }
+                }
+            } else check = false;
+            if (check == true) {
+                if (mangMoi.indexOf(mang[i][j]) === -1) {
+                    mangMoi.push(mang[i][j]);
                 }
             }
         }
-        if (check == true) {
-           mang.push(num)
-        }
     }
-
-    for (let i = 0; i < mang.length; i++) {
-        for (let j = 0; j < mang[i].length; j++) {
-            checkPrime(mang[i][j],mangMoi);
-        }
-    }
-    document.write(mangMoi);
+    document.write("Các số nguyên tố có trong mảng 2 chiều là " + mangMoi);
 </script>
 </body>
 </html>

@@ -18,18 +18,22 @@
     for (let i = 0; i < n; i++) {
         mang2[i] = parseInt(prompt("Nhập phần tử mảng 2"));
     }
-    let mang = [mang1, mang2];
-    document.write("[" + mang1 + "]" + "<br>" + "[" + mang2 + "]" + "<br>");
-    let sum = 0;
+    sumEven(mang1, mang2);
 
-    for (let i = 0; i < mang.length; i++) {
-        for (let j = 0; j < mang[i].length; j++) {
-            if (mang[i][j] % 2 == 0) {
-                sum += mang[i][j];
+    function sumEven(mang1, mang2) {
+        let mang = [mang1, mang2];
+        document.write("[" + mang1 + "]" + "<br>" + "[" + mang2 + "]" + "<br>");
+        let sum = 0;
+
+        for (let i = 0; i < mang.length; i++) {
+            for (let j = 0; j < mang[i].length; j++) {
+                if (mang[i][j] % 2 == 0) {
+                    sum += mang[i][j];
+                }
             }
         }
+        return document.write("Tổng các số chẵn có trong ma trận là: " + sum);
     }
-    document.write("Tổng các số chẵn có trong ma trận là: " + sum);
 </script>
 </body>
 </html>

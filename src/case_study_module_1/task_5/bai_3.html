@@ -18,22 +18,27 @@
     for (let i = 0; i < n; i++) {
         mang2[i] = parseInt(prompt("Nhập phần tử mảng 2"));
     }
-    let mang = [mang1, mang2];
-    document.write("[" + mang1 + "]" + "<br>" + "[" + mang2 + "]" + "<br>");
-    let maxMang = mang[0][0];
-    let minMang = mang[0][0];
+    minMax(mang1, mang2)
 
-    for (let i = 0; i < mang.length; i++) {
-        for (let j = 0; j < mang[i].length; j++) {
-            if (maxMang < mang[i][j]) {
-                maxMang = mang[i][j];
-            }
-            if (minMang > mang[i][j]) {
-                minMang = mang[i][j];
+    function minMax(mang1, mang2) {
+
+        let mang = [mang1, mang2];
+        document.write("[" + mang1 + "]" + "<br>" + "[" + mang2 + "]" + "<br>");
+        let maxMang = mang[0][0];
+        let minMang = mang[0][0];
+
+        for (let i = 0; i < mang.length; i++) {
+            for (let j = 0; j < mang[i].length; j++) {
+                if (maxMang < mang[i][j]) {
+                    maxMang = mang[i][j];
+                }
+                if (minMang > mang[i][j]) {
+                    minMang = mang[i][j];
+                }
             }
         }
+        return document.write("Giá  trị lớn nhất là: " + maxMang + ", giá trị nhỏ nhất là: " + minMang);
     }
-    document.write("Giá  trị lớn nhất là: " + maxMang + ", giá trị nhỏ nhất là: " + minMang)
 </script>
 </body>
 </html>

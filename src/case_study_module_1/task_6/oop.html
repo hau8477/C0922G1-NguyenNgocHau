@@ -7,6 +7,10 @@
 <body style="background-color: #8b8282">
 <p style="text-align: center;font-size: 50px"><b>Xổ Số CodeGym</b></p>
 <h2 style="text-align: center">Trung tâm xổ số CodeGym - Cơ hội để bạn đổi đời</h2>
+<div style="text-align: center;padding: 20px">
+    <button type="button" onclick="random()">Random 1 vé</button>
+    <button type="button">Tự chọn vé</button>
+</div>
 <div style="text-align: center">
     <input type="text" maxlength="2" style="width: 80px" name="vitri1" id="input1">
     <input type="text" maxlength="2" style="width: 80px" name="vitri2" id="input2">
@@ -14,8 +18,65 @@
     <input type="text" maxlength="2" style="width: 80px" name="vitri4" id="input4">
     <input type="text" maxlength="2" style="width: 80px" name="vitri5" id="input5">
     <input type="text" maxlength="2" style="width: 80px" name="vitri6" id="input6">
+    <button type="button" onclick="muaVe()">Mua vé</button>
 </div>
+<p id="result"></p>
 <script>
+    let danhSachVeSo = [];
+
+    function view() {
+        if (danhSachVeSo.length <= 4) {
+            var table = "<table border='0' style='width: 300px'>";
+            table += "<tr>";
+            table += "<th>" + "STT" + "</th>";
+            table += "<th colspan='6'>" + "DANH SÁCH VÉ ĐÃ MUA" + "</th>";
+            table += "</tr>";
+            for (let i = 0; i < danhSachVeSo.length; i++) {
+                table += "<tr>";
+                table += "<th style='border-top: solid black;border-right: solid black'>" + (i + 1) + "</th>";
+                for (let j = 0; j <danhSachVeSo[i].length ; j++) {
+                    table += "<th style='border-top: solid black'>" + danhSachVeSo[i][j] + "</th>";
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.getElementById("result").innerHTML = table;
+        } else {
+            alert("Bạn chỉ được mua 4 vé thôi nhé.");
+        }
+    }
+
+    function muaVe() {
+        let n1 = parseInt(document.getElementById("input1").value);
+        let n2 = parseInt(document.getElementById("input2").value);
+        let n3 = parseInt(document.getElementById("input3").value);
+        let n4 = parseInt(document.getElementById("input4").value);
+        let n5 = parseInt(document.getElementById("input5").value);
+        let n6 = parseInt(document.getElementById("input6").value);
+
+        let veSo = [n1, n2, n3, n4, n5, n6]
+        danhSachVeSo.push(veSo);
+        view();
+        clear();
+    }
+
+    function clear() {
+        document.getElementById("input1").value = "";
+        document.getElementById("input2").value = "";
+        document.getElementById("input3").value = "";
+        document.getElementById("input4").value = "";
+        document.getElementById("input5").value = "";
+        document.getElementById("input6").value = "";
+    }
+
+    function random() {
+        document.getElementById("input1").value = Math.floor(Math.random() * 100);
+        document.getElementById("input2").value = Math.floor(Math.random() * 100);
+        document.getElementById("input3").value = Math.floor(Math.random() * 100);
+        document.getElementById("input4").value = Math.floor(Math.random() * 100);
+        document.getElementById("input5").value = Math.floor(Math.random() * 100);
+        document.getElementById("input6").value = Math.floor(Math.random() * 100);
+    }
 </script>
 </body>
 </html>

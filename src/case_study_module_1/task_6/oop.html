@@ -20,30 +20,48 @@
     <input type="text" maxlength="2" style="width: 80px" name="vitri6" id="input6">
     <button type="button" onclick="muaVe()">Mua vé</button>
 </div>
+<div style="text-align: center;padding: 20px">
+    <h2>Kết quả xổ số hôm nay</h2>
+    <input type="text" maxlength="2" style="width: 80px" name="vitri1" id="output1">
+    <input type="text" maxlength="2" style="width: 80px" name="vitri2" id="output2">
+    <input type="text" maxlength="2" style="width: 80px" name="vitri3" id="output3">
+    <input type="text" maxlength="2" style="width: 80px" name="vitri4" id="output4">
+    <input type="text" maxlength="2" style="width: 80px" name="vitri5" id="output5">
+    <input type="text" maxlength="2" style="width: 80px" name="vitri6" id="output6">
+    <button type="button" onclick="xoSo(danhSachVeSo)">Xổ số</button>
+</div>
+<div>
+    <p id="hienThiKetQua" style="text-align: center"></p>
+</div>
 <p id="result"></p>
 <script>
     let danhSachVeSo = [];
 
     function view() {
-        if (danhSachVeSo.length <= 4) {
-            var table = "<table border='0' style='width: 300px'>";
-            table += "<tr>";
-            table += "<th>" + "STT" + "</th>";
-            table += "<th colspan='6'>" + "DANH SÁCH VÉ ĐÃ MUA" + "</th>";
-            table += "</tr>";
-            for (let i = 0; i < danhSachVeSo.length; i++) {
+        var table = "<table border='1' style='width: 300px;float: right'>";
+        table += "<tr>";
+        table += "<th>" + "STT" + "</th>";
+        table += "<th colspan='6'>" + "DANH SÁCH VÉ ĐÃ MUA" + "</th>";
+        table += "</tr>";
+        for (let i = 0; i < danhSachVeSo.length; i++) {
+            if (i % 2 == 0) {
                 table += "<tr>";
-                table += "<th style='border-top: solid black;border-right: solid black'>" + (i + 1) + "</th>";
-                for (let j = 0; j <danhSachVeSo[i].length ; j++) {
-                    table += "<th style='border-top: solid black'>" + danhSachVeSo[i][j] + "</th>";
+                table += "<th>" + (i + 1) + "</th>";
+                for (let j = 0; j < danhSachVeSo[i].length; j++) {
+                    table += "<th style='background-color: white'>" + danhSachVeSo[i][j] + "</th>";
+                }
+                table += "</tr>";
+            } else {
+                table += "<tr>";
+                table += "<th>" + (i + 1) + "</th>";
+                for (let j = 0; j < danhSachVeSo[i].length; j++) {
+                    table += "<th style='background-color: lightskyblue'>" + danhSachVeSo[i][j] + "</th>";
                 }
                 table += "</tr>";
             }
-            table += "</table>";
-            document.getElementById("result").innerHTML = table;
-        } else {
-            alert("Bạn chỉ được mua 4 vé thôi nhé.");
         }
+        table += "</table>";
+        document.getElementById("result").innerHTML = table;
     }
 
     function muaVe() {
@@ -54,8 +72,12 @@
         let n5 = parseInt(document.getElementById("input5").value);
         let n6 = parseInt(document.getElementById("input6").value);
 
-        let veSo = [n1, n2, n3, n4, n5, n6]
-        danhSachVeSo.push(veSo);
+        let veSo = [n1, n2, n3, n4, n5, n6];
+        if (danhSachVeSo.length < 4) {
+            danhSachVeSo.push(veSo);
+        } else {
+            alert("Bạn chỉ được mua 4 vé thôi nhé.");
+        }
         view();
         clear();
     }
@@ -76,6 +98,51 @@
         document.getElementById("input4").value = Math.floor(Math.random() * 100);
         document.getElementById("input5").value = Math.floor(Math.random() * 100);
         document.getElementById("input6").value = Math.floor(Math.random() * 100);
+    }
+
+    function xoSo(danhSachVeSo) {
+        document.getElementById("output1").value = Math.floor(Math.random() * 100);
+        document.getElementById("output2").value = Math.floor(Math.random() * 100);
+        document.getElementById("output3").value = Math.floor(Math.random() * 100);
+        document.getElementById("output4").value = Math.floor(Math.random() * 100);
+        document.getElementById("output5").value = Math.floor(Math.random() * 100);
+        document.getElementById("output6").value = Math.floor(Math.random() * 100);
+
+        let n1 = parseInt(document.getElementById("output1").value);
+        let n2 = parseInt(document.getElementById("output2").value);
+        let n3 = parseInt(document.getElementById("output3").value);
+        let n4 = parseInt(document.getElementById("output4").value);
+        let n5 = parseInt(document.getElementById("output5").value);
+        let n6 = parseInt(document.getElementById("output6").value);
+        let ketQuaVe = [n1, n2, n3, n4, n5, n6];
+        let count = 0;
+        let hienThi = [];
+
+        for (let i = 0; i < danhSachVeSo.length; i++) {
+            for (let j = 0; j < danhSachVeSo[i].length; j++) {
+                for (let k = 0; k < ketQuaVe.length; k++) {
+                    if (ketQuaVe[k] == danhSachVeSo[i][j]) {
+                        count += 1;
+                    }
+                }
+            }
+            if (count == 6) {
+                a = ("Vé thứ " + (i + 1) + " đã trúng giải đặc biệt!" + "<br>");
+                hienThi.push(a);
+            } else if (count == 5) {
+                a = ("Vé thứ " + (i + 1) + " đã trúng giải nhì!" + "<br>");
+                hienThi.push(a);
+            } else if (count == 3) {
+                a = ("Vé thứ " + (i + 1) + " đã trúng giải ba!" + "<br>");
+                hienThi.push(a);
+            } else if (count <= 2) {
+                a = ("Vé của thứ " + (i + 1) + " của bạn không trúng, chúc bạn may mắn lần sau" + "<br>");
+                hienThi.push(a);
+            }
+            count = 0;
+        }
+        document.getElementById("hienThiKetQua").innerHTML = hienThi.join(" ");
+
     }
 </script>
 </body>

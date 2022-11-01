@@ -22,13 +22,16 @@
     let count1 = 0;
 
     for (let i = 0; i < array.length; i++) {
-        if ((array[i] % 5 == 0) && (i % 3 == 0)) {
+        if ((array[i] % 5 === 0) && (i % 3 === 0)) {
             sum += array[i];
             count1++;
         }
     }
-    let avg = parseFloat(sum/count1);
-    document.write("Giá trị trung bình của các phần tử chia hết cho 5 ở vị trí chia hết cho 3 là: " + avg);
+    let avg = sum / count1;
+
+    if (avg > 0) {
+        document.write("Giá trị trung bình của các phần tử chia hết cho 5 ở vị trí chia hết cho 3 là: " + avg);
+    } else document.write("Không có giá trị");
 </script>
 </body>
 </html>

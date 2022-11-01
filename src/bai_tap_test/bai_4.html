@@ -5,38 +5,165 @@
     <title>Title</title>
 </head>
 <body>
-<SCRIPT>
-    let arr = [1, 5, 6, 13, 9, 12, 8, 0, 5, 1];
+<img src="c62d0c0c-dbe3-11e7-bf25-56c566ee3692.jpg " height="200px" width="100%">
+<h1 style="text-align: center;size: 50px;background-color: lightskyblue">QUẢN LÍ HỌC VIÊN</h1>
+<table border="1" style="float: left;width: 500px;height: 300px">
+    <tr>
+        <th colspan="4" style="font-size: 30px;color: red;background-color: aqua">Thông tin học viên</th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>ID</th>
+        <th colspan="3"><input id="id" type="number"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Họ và tên</th>
+        <th colspan="3"><input id="hovaten" type="text"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Ngày sinh</th>
+        <th colspan="3"><input id="ngaysinh" type="date"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Giới tính</th>
+        <th colspan="3"><input id="gioitinh" type="text"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Lớp</th>
+        <th colspan="3"><input id="lop" type="text"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Ảnh</th>
+        <th colspan="3"><input id="anh" type="url"></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th></th>
+        <th colspan="3">
+            <button style="background-color: limegreen" type="button" onclick="themHocSinh()">Add</button>
+            <button style="background-color: gold" type="button" onclick="luuHocSinh()">Save</button>
+        </th>
+    </tr>
+</table>
+<table border="1" style="float: right ;width: 700px">
+    <tr style='font-size: 15px;color: red;background-color: aqua'>
+        <th colspan="7"><h1>Quản lý thông tin học sinh</h1></th>
+    </tr>
+    <tr  style='background-color: lightgrey3'>
+        <th>ID</th>
+        <th>Họ và tên</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Lớp</th>
+        <th>Ảnh</th>
+        <th>Tùy chọn</th>
+    </tr>
+    <tbody id="result"></tbody>
+</table>
+<script>
+    class HocSinh {
+        constructor(id, hovaten, ngaysinh, gioitinh, lop, anh) {
+            this.id = id;
+            this.hovaten = hovaten;
+            this.ngaysinh = ngaysinh;
+            this.gioitinh = gioitinh;
+            this.lop = lop;
+            this.anh = anh;
+        }
+    }
 
-    document.write(findFibo(arr));
+    class QuanLyThongTinHocSinh {
+        constructor(array) {
+            this.array = array;
+        }
 
-    function findFibo(arr) {
-        let newArr = [];
-        for (let i = 0; i < arr.length; i++) {
-            if (isFibo(arr[i])) {
-                newArr.push(arr[i]);
+        danhSach() {
+            let table = "<table border='1' style='width: 700px'>";
+            for (let i = 0; i < this.array.length; i++) {
+                table += "<tr style='background-color: lightblue'>";
+                table += "<th>" + this.array[i].id + "</th>";
+                table += "<th>" + this.array[i].hovaten + "</th>";
+                table += "<th>" + this.array[i].ngaysinh + "</th>";
+                table += "<th>" + this.array[i].gioitinh + "</th>";
+                table += "<th>" + this.array[i].lop + "</th>";
+                table += "<th><img width='100px' height='100px' src='" + this.array[i].anh + "'/></th>";
+                table += "<th>" + "<button type='button' onclick='editHS(" + i + ")' style='background-color: goldenrod'> Edit </button>      " +
+                    "<button type='button' onclick='deleteHS(" + i + ")' style='background-color: red'> Delete </button>";
+                table += "</th>";
+                table += "</tr>";
             }
+            table += "</table>";
+            document.getElementById("result").innerHTML = table;
         }
-        return newArr.sort(function (a, b) {
-            return a - b
-        }).join(" ");
+
+        themHocSinh(hocSinh) {
+            this.array.push(hocSinh);
+        }
+
+        xoaHocSinh(i) {
+            this.array.splice(i, 1);
+        }
+
+        editHocSinh(i) {
+            document.getElementById("id").value = this.array[i].id;
+            document.getElementById("hovaten").value = this.array[i].hovaten;
+            document.getElementById("ngaysinh").value = this.array[i].ngaysinh;
+            document.getElementById("gioitinh").value = this.array[i].gioitinh;
+            document.getElementById("lop").value = this.array[i].lop;
+            document.getElementById("anh").value = this.array[i].anh;
+        }
+
+        luuHocSinhDaSua(i) {
+            this.array[i].id = document.getElementById("id").value;
+            this.array[i].hovaten = document.getElementById("hovaten").value;
+            this.array[i].ngaysinh = document.getElementById("ngaysinh").value;
+            this.array[i].gioitinh = document.getElementById("gioitinh").value;
+            this.array[i].lop = document.getElementById("lop").value;
+            this.array[i].anh = document.getElementById("anh").value;
+        }
     }
 
-    function isFibo(n) {
-        let a = 0;
-        let b = 1;
-        let c = 0;
-        if (n === a || n === b) {
-            return true;
-        }
-        while (n > a || n > b) {
-            c = a + b;
-            if (n === c) return true;
-            a = b;
-            b = c;
-        }
-        return false;
+    let array = [];
+    let quanLy = new QuanLyThongTinHocSinh(array);
+
+    function clear() {
+        document.getElementById("id").value = "";
+        document.getElementById("hovaten").value = "";
+        document.getElementById("ngaysinh").value = "";
+        document.getElementById("gioitinh").value = "";
+        document.getElementById("lop").value = "";
+        document.getElementById("anh").value = "";
     }
-</SCRIPT>
+
+    function themHocSinh() {
+        let id = parseInt(document.getElementById("id").value);
+        let hovaten = document.getElementById("hovaten").value;
+        let ngaysinh = document.getElementById("ngaysinh").value;
+        let gioitinh = document.getElementById("gioitinh").value;
+        let lop = document.getElementById("lop").value;
+        let anh = document.getElementById("anh").value;
+
+        let hocsinh = new HocSinh(id,hovaten,ngaysinh,gioitinh,lop,anh);
+        quanLy.themHocSinh(hocsinh);
+        quanLy.danhSach();
+        clear();
+    }
+
+    function deleteHS(i) {
+        quanLy.xoaHocSinh(i);
+        quanLy.danhSach();
+    }
+
+    let idCurrent = -1;
+
+    function editHS(i) {
+        idCurrent = i;
+        clear();
+      quanLy.editHocSinh(i);
+    }
+
+    function luuHocSinh() {
+        quanLy.luuHocSinhDaSua(idCurrent);
+        quanLy.danhSach();
+    }
+</script>
 </body>
 </html>

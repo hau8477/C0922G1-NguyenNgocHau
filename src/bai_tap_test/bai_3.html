@@ -12,30 +12,42 @@
     for (let i = 0; i < count; i++) {
         array[i] = parseInt(prompt("Nhập phần tử của mảng: "));
     }
-    arr = fibonacci(array);
-    document.write("Mảng nhập vào có các số fibonacci là: " + fibonacci(array) + "<br>");
-    document.write("Các số fibonacci trong mảng sắp xếp tăng dần là: " + arr.sort(compareNumbers))
+
+    document.write("Các số fibonacci có trong mảng là: " + findFibonacci(array) + "<br>");
+    document.write("Các số fibonacci sắp xếp tăng dần là: " + findFibonacci(array).sort(compareNumbers));
 
     function compareNumbers(a, b) {
         return a - b;
     }
 
-    function fibonacci(array) {
-        let arrFibonacci = [0, 1, 1];
-        for (let i = 3; i <= 1000; i++) {
-            arrFibonacci[i] = arrFibonacci[i - 1] + arrFibonacci[i - 2];
-        }
-        let newArrFibonacci = [];
+    function findFibonacci(array) {
+        let arrayFibonacci = [];
         for (let i = 0; i < array.length; i++) {
-            for (let j = 0; j < arrFibonacci.length; j++) {
-                if (array[i] == arrFibonacci[j]) {
-                    newArrFibonacci.push(array[i]);
-                    break;
-                }
+            if (isFibonacci(array[i])) {
+                arrayFibonacci.push(array[i]);
             }
         }
-        return newArrFibonacci;
+        return arrayFibonacci;
     }
+
+    function isFibonacci(n) {
+        let a = 0;
+        let b = 1;
+        let c;
+        if (n === a || n === b) {
+            return true;
+        }
+        while (n > a || n > b) {
+            c = a + b;
+            if (n === c) {
+                return true;
+            }
+            a = b;
+            b = c;
+        }
+        return false;
+    }
+
 </script>
 </body>
 </html>

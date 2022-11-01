@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let count = parseInt(prompt("Nhập số lượng phần tử  của mảng."));
+
+    while (count <= 0) {
+        count = parseInt(prompt("Số lượng phần tử phải lớn hơn 0."));
+    }
+
+    for (let i = 0; i < count; i++) {
+        array[i] = parseInt(prompt("Nhập phần tử của mảng: "));
+    }
+    document.write(array + "<br>");
+
+    let check = true;
+
+    for (let i = 0; i < array.length / 2; i++) {
+        if (array[i] != array[array.length - 1 - i]) {
+            check = false;
+            break;
+        }
+    }
+
+    if (check == true) {
+        document.write("Đây là mảng đối xứng");
+    } else document.write("Đây là mảng không đối xứng");
+</script>
+</body>
+</html>

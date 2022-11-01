@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2 </title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập vào 1 chuỗi");
+    vietTat(string);
+
+    function vietTat(string) {
+        let arr = string.split(" ");
+        let count = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] != "") {
+                count += 1;
+            }
+        }
+        let vietTat = "";
+
+        if (count == 1) {
+            return document.write("Chuỗi " + string + " chỉ có 1 từ nên không cần viết tắt");
+        } else {
+            for (let i = 0; i < arr.length; i++) {
+                vietTat += arr[i].slice(0, 1).toUpperCase();
+            }
+            return document.write("Chuỗi " + "<pre>" + string + "</pre>" + " viết tắt là: " + vietTat);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let count = parseInt(prompt("Nhập số lượng phần tử  của mảng."));
+
+    while (count > 50 || count <= 0) {
+        count = parseInt(prompt("Số lượng phần tử phải nhỏ hơn 50 và lớn hơn 0."));
+    }
+
+    for (let i = 0; i < count; i++) {
+        array[i] = parseInt(prompt("Nhập phần tử của mảng: "));
+    }
+
+    document.write("Mảng đã thêm vào là: " + array + "<br>");
+    let sum = 0;
+    let count1 = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if ((array[i] % 5 == 0) && (i % 3 == 0)) {
+            sum += array[i];
+            count1++;
+        }
+    }
+    let avg = parseFloat(sum/count1);
+    document.write("Giá trị trung bình của các phần tử chia hết cho 5 ở vị trí chia hết cho 3 là: " + avg);
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let count = parseInt(prompt("Nhập số lượng phần tử  của mảng."));
+
+    while (count <= 0) {
+        count = parseInt(prompt("Số lượng phần tử phải lớn hơn 0."));
+    }
+
+    for (let i = 0; i < count; i++) {
+        array[i] = parseInt(prompt("Nhập phần tử của mảng: "));
+    }
+
+    document.write("Mảng ban đầu: " + array + "<br>");
+
+    let countEven = 0;
+    let countOdd = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 == 0) {
+            countEven++;
+        } else countOdd++;
+    }
+
+    document.write("Có " + countEven + " số nguyên chẵn" + "<br>"
+        + "Có " + countOdd + " số nguyên lẻ" + "<br>")
+
+</script>
+</body>
+</html>

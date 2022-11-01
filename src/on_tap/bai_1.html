@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập số lượng phần tử của mảng"));
+    let arrayNumber = [];
+
+    for (let i = 0; i < n; i++) {
+        arrayNumber[i] = parseInt(prompt("Nhập phần tử của mảng"));
+    }
+    document.write("Mảng ban đầu là: " + arrayNumber + "<br>");
+
+    function checkPrime(num) {
+        let check = true;
+        if (num >= 2) {
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+        } else check = false;
+        return check;
+    }
+
+    function compareNumbers(a, b) {
+        return a - b;
+    }
+
+    let sum = 0;
+    let count = 0;
+    let viTriMin = [];
+    let demSoChinhPhuong = 0;
+    let arrNguyenTo = [];
+    let min = arrayNumber[0];
+
+    for (let i = 0; i < arrayNumber.length; i++) {
+        if ((arrayNumber[i] % 2 != 0) && (i % 2 == 0) && (arrayNumber[i] > 0)) {
+            sum += arrayNumber[i];
+            count++;
+        }
+        if (arrayNumber[i] == (Math.sqrt(arrayNumber[i]) * Math.sqrt(arrayNumber[i]))) {
+            demSoChinhPhuong++;
+        }
+        if (checkPrime(arrayNumber[i])) {
+            if (arrNguyenTo.indexOf(arrayNumber[i]) === -1) {
+                arrNguyenTo.push(arrayNumber[i]);
+            }
+        }
+        if (min > arrayNumber[i]) {
+            min = arrayNumber[i];
+        }
+    }
+
+    for (let i = 0; i < arrayNumber.length; i++) {
+        if (min == arrayNumber[i]) {
+            viTriMin.push(i);
+        }
+    }
+
+
+    let avgEven = parseFloat(sum / count);
+    document.write("Trung bình cộng các số lẻ ở vị trí chẵn là: " + avgEven + "<br>"
+        + min + " là số nhỏ nhất, ở các vị trí: " + viTriMin + "<br>"
+        + "Có " + demSoChinhPhuong + " số chính phương trong mảng" + "<br>"
+        + "Các số nguyên tố có trong mảng là: " + arrNguyenTo + "<br>");
+
+    arr1 = arrayNumber.join(" ")
+    arr2 = arr1.split(" ");
+    arr3 = arr1.split(" ")
+
+    for (let i = 0; i < arr3.length; i++) {
+        if (arr3[i] < 0) {
+            arr3[i] = 0;
+        }
+    }
+
+    for (let i = 0; i < arr2.length; i++) {
+        if (arr2[i] < 0) {
+            arr2.splice(i, 1);
+        }
+    }
+
+    arrayNumber.sort(compareNumbers);
+    let max = arrayNumber[arrayNumber.length - 1];
+    document.write("Số lớn nhất trong mảng vừa nhập là : " + max + "<br>"
+        + "Mảng sau khi sắp xếp tăng dần là: " + (arrayNumber.sort(compareNumbers)) + "<br>"
+        + "Mảng sau khi thay thế các phần tử âm có trong mảng ban đầu bằng giá trị 0 là: " + arr3 + "<br>"
+        + "Mảng sau khi xóa các phần tử âm có trong mảng ban đầu là: " + arr2);
+</script>
+</body>
+</html>

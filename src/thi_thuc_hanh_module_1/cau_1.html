@@ -24,10 +24,11 @@
 
     for (let i = 0; i < array.length; i++) {
         if (arrayNew.indexOf(array[i]) === -1) {
-            arrayNew.push(array[i]);
+           if (array[i] !== "") {
+               arrayNew.push(array[i]);
+           }
         }
     }
-    console.log(arrayNew);
 
     let count = 0;
     let arrayCount = [];

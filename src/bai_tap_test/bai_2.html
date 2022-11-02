@@ -14,13 +14,13 @@
         let count = 0;
 
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] != "") {
+            if (arr[i] !== "") {
                 count += 1;
             }
         }
         let vietTat = "";
 
-        if (count == 1) {
+        if (count === 1) {
             return document.write("Chuỗi " + string + " chỉ có 1 từ nên không cần viết tắt");
         } else {
             for (let i = 0; i < arr.length; i++) {

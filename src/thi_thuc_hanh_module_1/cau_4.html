@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 4</title>
+</head>
+<body>
+<h1 style="text-align: center;size: 50px;background-color: lightskyblue">QUẢN LÍ SẢN PHẨM</h1>
+<table border="1" style="float: left;width: 500px;height: 300px">
+    <tr>
+        <th colspan="4" style="font-size: 30px;color: red;background-color: aqua">Thông tin sản phẩm</th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Mã sản phẩm</th>
+        <th colspan="3"><label><input id="ma" type="number"></label></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Tên sản phẩm</th>
+        <th colspan="3"><label><input id="ten" type="text"></label></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Hãng sản phẩm</th>
+        <th colspan="3"><label><input id="hang" type="text"></label></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th>Gía sản phẩm</th>
+        <th colspan="3"><label><input id="gia" type="text"></label></th>
+    </tr>
+    <tr style="background-color: lightblue">
+        <th></th>
+        <th colspan="3">
+            <button style="background-color: limegreen" type="button" onclick="themMotSanPham()">Add</button>
+        </th>
+    </tr>
+</table>
+<table border="1" style="float: right ;width: 700px">
+    <tr style='font-size: 15px;color: red;background-color: aqua'>
+        <th colspan="7"><h1>Quản lý thông tin sản phẩm</h1></th>
+    </tr>
+    <tr style='background-color: lightgrey'>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Hãng sản phẩm</th>
+        <th>Giá sản phẩm</th>
+    </tr>
+    <tbody id="result"></tbody>
+</table>
+<script>
+    class SanPham {
+        constructor(ma, ten, hang, gia) {
+            this.ma = ma;
+            this.ten = ten;
+            this.hang = hang;
+            this.gia = gia;
+        }
+
+        getMa() {
+            return this.ma;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getHang() {
+            return this.hang;
+        }
+
+        getGia() {
+            return this.gia;
+        }
+
+        setMa(maMoi) {
+            return this.ma = maMoi;
+        }
+
+        setTen(tenMoi) {
+            return this.ten = tenMoi;
+        }
+
+        setHang(hangMoi) {
+            return this.hang = hangMoi;
+        }
+
+        setGia(giaMoi) {
+            return this.gia = giaMoi;
+        }
+
+        toString() {
+            return "Mã sản phẩm: " + this.ma + "; Tên sản Phẩm: " + this.ten + "; Hãng sản phẩm: " + "; Giá sản phẩm: " + this.gia ;
+        }
+    }
+
+    class QuanLySanPham {
+        constructor(array) {
+            this.array = array;
+        }
+
+        danhSach() {
+            let table = "<table border='1' style='width: 700px'>";
+            for (let i = 0; i < this.array.length; i++) {
+                table += "<tr style='background-color: lightblue'>";
+                table += "<th>" + this.array[i].ma + "</th>";
+                table += "<th>" + this.array[i].ten + "</th>";
+                table += "<th>" + this.array[i].hang + "</th>";
+                table += "<th>" + this.array[i].gia + "</th>";
+                table += "</th>";
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.getElementById("result").innerHTML = table;
+        }
+
+        themSanPham(sanPham) {
+            this.array.push(sanPham);
+        }
+    }
+
+    let arraySanPham = [];
+    let quanLySanPham = new QuanLySanPham(arraySanPham);
+
+    function themMotSanPham() {
+        let ma = document.getElementById("ma").value;
+        let ten = document.getElementById("ten").value;
+        let hang = document.getElementById("hang").value;
+        let gia = document.getElementById("gia").value;
+
+        let sanPham = new SanPham(ma, ten, hang, gia);
+        quanLySanPham.themSanPham(sanPham);
+        quanLySanPham.danhSach();
+        clear();
+    }
+
+    function clear() {
+        document.getElementById("ma").value = "";
+        document.getElementById("ten").value = "";
+        document.getElementById("hang").value = "";
+        document.getElementById("gia").value = "";
+    }
+</script>
+</body>
+</html>

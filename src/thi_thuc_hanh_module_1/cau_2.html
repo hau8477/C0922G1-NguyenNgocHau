@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập vào 1 chuỗi.");
+    checkDoiXung(string);
+
+    function checkDoiXung(string) {
+        let array = string.split("");
+        let check = true;
+
+        for (let i = 0; i < array.length / 2; i++) {
+            if (array[i] !== array[array.length - 1 - i]) {
+                check = false;
+                break;
+            }
+        }
+
+        if (check === true) {
+            return alert("Chuỗi " + string + " là chuỗi đối xứng");
+        } else return alert("Chuỗi " + string + " là chuỗi không đối xứng");
+    }
+</script>
+</body>
+</html>

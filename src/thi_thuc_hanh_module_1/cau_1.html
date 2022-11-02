@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 1</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập số phần tử của mảng."))
+
+    while (n <= 0 || n > 20) {
+        n = parseInt(prompt("Nhập lại vì số phần tử phải nhỏ hơn hoặc bằng 20 và lớn hơn 0"));
+    }
+
+    let array = [];
+
+    for (let i = 0; i < n; i++) {
+        array[i] = prompt("Nhập phần tử có chỉ số: " + i).trim();
+    }
+
+    document.write(array + "<br>");
+
+    let arrayNew = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (arrayNew.indexOf(array[i]) === -1) {
+            arrayNew.push(array[i]);
+        }
+    }
+    console.log(arrayNew);
+
+    let count = 0;
+    let arrayCount = [];
+
+    for (let i = 0; i < arrayNew.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if (arrayNew[i] === array[j]) {
+                count++;
+            }
+        }
+        arrayCount.push(count);
+        count = 0;
+    }
+
+    for (let i = 0; i < arrayNew.length; i++) {
+        document.write(arrayNew[i] + " : " + arrayCount[i] + "<br>");
+    }
+</script>
+</body>
+</html>
